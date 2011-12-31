@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				line-height: 1.3em;
+			}
+			
+			table tr td.label{
+				vertical-align: top;
+				text-align: right;
+				width: 120px;
+			}
+			
+			span.gray {
+				color: gray;
+			}
+			
+			p.indent_30 {
+				text-indent: 30px;
+			}
+			
+			img {
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<%= @et.parsed_body %>
+	</body>
+</html>

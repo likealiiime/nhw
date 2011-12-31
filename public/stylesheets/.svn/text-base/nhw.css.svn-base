@@ -1,0 +1,263 @@
+body {
+	margin: 0 0 0 70px;
+	font-family: Helvetica, sans-serif;
+	font-size:10pt;
+	background-color: #D9E5F2;
+	height: 100%;
+	color: #444;
+}
+
+html {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: none;
+}
+
+table#mother {
+	width: 775px;
+	height: 100%;
+}
+
+td#layout_header {
+	width: 775px;
+	height: 128px;
+	background-image: url(/images/site/header.jpg);
+	cursor: pointer;
+}
+
+td#layout_nav {
+	width: 775px;
+	height: 30px;
+	background-color: #3e6cb7;/*#B8373C;*/
+	vertical-align: middle;
+	text-align: center;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+}
+
+td#layout_nav a {
+	color: white;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+td#layout_content {
+	background-color: white;
+	height: 100%;
+	padding: 0 15px 65px 15px;
+	vertical-align: top;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+}
+
+td#layout_footer {
+	height: 30px;
+	background-color: white;
+	font-size: 9pt;
+	color: #6A85C3;
+	text-align: center;
+}
+
+td#layout_footer a {
+	color: #6A85C3;
+	font-weight: bold;
+}
+
+td#layout_middle {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.sidebar {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	background-color: #E1F0FB;
+	padding: 1px 20px 8px 20px;
+}
+
+div.sidebar#layout_testimonials {
+	width: 200px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+div.sidebar#layout_joinourteam {
+	width: 300px;
+	float: right;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+div.sidebar#layout_serviceguidelines {
+	width: 300px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	float: right;
+}
+
+p {
+	text-indent: 25px;
+	line-height: 1.3em;
+}
+
+p.noindent {
+	text-indent: 0;
+}
+
+h1 {
+	font-weight: normal;
+	color: black;
+}
+
+h2 {
+	font-weight: normal;
+	color: black;
+}
+
+h3 {
+	font-weight: normal;
+	color: #566FB6;
+}
+
+h4 {
+	font-size: 12pt;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+ul li {
+	margin-bottom: 10px;
+}
+
+table#homeowners_table tr td {
+	font-size: 9pt;
+}
+
+table#whatscovered_table thead tr td {
+	font-size: 11pt;
+}
+
+table#whatscovered_table {
+	border: none;
+	width: 100%;
+}
+
+table.table tr td {
+	text-align: center;
+	font-size: 12pt;
+}
+
+table.table thead tr td {
+	background-color: #E1F0FB;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 11pt;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+}
+
+table.table tfoot {
+	background-color: #E1F0FB;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+}
+
+table.table tr td.label {
+	font-size: 10pt;
+}
+
+table.table tr td.notoffered {
+	color: #AAA;
+}
+
+.stripe {
+	background-color: #F0F0F0;
+}
+
+table#whatscovered_table tr td a {
+	font-size: 14pt;
+	color: #566FB6;
+}
+
+table.form_table tr td.label {
+	text-align: right;
+}
+
+td table.table tr td {
+	font-size: 9pt;
+}
+td table.table thead tr td {
+	font-size: 9pt;
+}
+
+p#about_p {
+	text-indent: 0;
+	color: black;
+	margin-left: 35px;
+}
+
+div.testimonial {
+	padding: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+div.sheet {
+	background-color: white;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 8px 15px 8px 15px;
+	display: none;
+	border-bottom: 1px dashed #CCC;
+}
+
+.floatLeft_20 {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.floatRight_20 {
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+div.authorizeNetSeal {
+	width: 90px;
+	height: 72px;
+}
+
+div#badge {
+	width: 126px;
+	height: 126px;
+	background-image: url(/images/site/badge.png);
+	background-repeat: no-repeat;
+	z-index: 10;
+	position: absolute;
+	left: 775px;
+	top: 200px;
+}
+
+.red {
+	color: #CE3229;
+}

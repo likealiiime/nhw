@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent
+END
+method_tracer_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/method_tracer_test.rb
+END
+testable_agent.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/testable_agent.rb
+END
+stats_engine_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/stats_engine_test.rb
+END
+controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/controller_test.rb
+END
+transaction_sample_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/transaction_sample_test.rb
+END
+mock_scope_listener.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/mock_scope_listener.rb
+END
+collection_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/collection_helper_test.rb
+END
+mock_ar_connection.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/mock_ar_connection.rb
+END
+transaction_sample_builder_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/transaction_sample_builder_test.rb
+END
+active_record_instrumentation_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/active_record_instrumentation_test.rb
+END
+agent_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/agent_test.rb
+END
+error_collector_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/error_collector_test.rb
+END
+agent_test_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/agent_test_controller.rb
+END
+worker_loop_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/worker_loop_test.rb
+END
+transaction_sampler_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/transaction_sampler_test.rb
+END
+dispatcher_instrumentation_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/dispatcher_instrumentation_test.rb
+END
+classloader_patch_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/classloader_patch_test.rb
+END
+metric_data_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/agent/metric_data_test.rb
+END

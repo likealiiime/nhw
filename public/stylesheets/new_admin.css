@@ -1,0 +1,397 @@
+html {
+	height: 100%;
+}
+
+img { border: none; }
+
+body {
+	background: #EFEFEF;
+	margin: 0;
+	font-family: "Lucida Grande", Tahoma, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+/* Browser Styles */
+body.gecko input.searchField { padding-top: 6px; }
+body.webkit input.searchField { padding-top: -3px; }
+/*body.webkit div.searchField_left { display: none; }
+body.webkit div.searchField_right { display: none; }
+body.webkit input.searchField {
+	-webkit-appearance: searchfield;
+	padding: 0 0 0 10px;
+}
+body.webkit div.searchField_lead {
+	background-image: none;
+	position: relative;
+	left: 10px;
+	vertical-align: middle;
+}*/
+/* End Browser Styles */
+
+a {
+	text-decoration: none;
+	color: #385198;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+	color: purple;
+}
+
+h1 {
+	color: #566FB6;
+	font-size: 18pt;
+	font-weight: normal;
+	padding: 5px 0 10px 10px;
+	margin: 0;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 14pt;
+}
+
+div#layout_content {
+	padding: 60px 20px 30px 20px;
+	background-color: white;
+	border-bottom: 3px solid #3e6cb7;
+}
+
+div#layout_fixed_header {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; min-width: 950px;
+}
+
+div#layout_footer {
+	font-size: 9pt;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+div#layout_tabs {
+	padding-left: 10px;
+	margin-bottom: 5px;
+}
+
+div.layout_tab_container {
+	width: 120px;
+	height: 26px;	/* base height of 16 plus 5 padding, twice */
+	overflow: hidden;
+	margin: 0; padding: 0;
+	position: relative;
+	bottom: 5px;
+	float: left;
+}
+
+div#layout_tabs div.selectedContainer {
+	position: relative;
+	/* This means the tab will be exactly 1 pixel shorter than the rest, but it's unnoticeable */
+	bottom: 6px;
+}
+
+div#layout_tabs div.logout {
+	margin-left: 20px;
+}
+div#layout_tabs div.logout div.layout_tab {
+	background-color: #D9E5F2;/*#F2C8CB;*/
+	color: #A33723;
+}
+div#layout_tabs div.logout div.layout_tab:hover {
+	background-color: #F2C8CB;
+	color: #A33723;
+}
+
+div.layout_tab {
+	color: #888;
+	background-color: #D9E5F2;
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+	width: 100px;
+	height: 15px; 
+	vertical-align: middle;
+	cursor: pointer;
+	border-bottom: 1px dotted white;
+	margin-left: 5px;
+}
+div#layout_tabs > div.hasNoSubtabs > div.layout_tab {
+	border-bottom: none;
+	height: 16px;
+}
+
+div.layout_tab:hover {
+	background-color: #B7CDEB;
+	color: white;
+}
+div.layout_tab > a {
+	color: inherit;
+	text-decoration: none;
+	/*	These attributes will extend the <a> to the end of the
+		<div>, giving the illusion most of the div is clickable */
+	display: block;
+	width: 100%;
+}
+
+div.layout_tab_container div.selected {
+	color: white;
+	background-color: #3e6cb7;
+	font-weight: bold;
+	border-bottom: 1px solid #0C28AD;
+	height: 15px;
+}
+
+div#layout_toolbar {
+	background-color: #3e6cb7;
+	vertical-align: middle;
+	margin-bottom: 5px;
+	padding-left: 12px;
+	padding-top: 3px;
+	height: 30px;
+	font-size: 13px;
+	color: white;
+	border-bottom: 1px solid #0C28AD;
+}
+
+div.searchField_container { display: inline; }
+div.searchField_left {
+	margin: 0;
+	float: left;
+	width: 11px;
+	height: 24px;
+	background-image: url(/images/admin/searchfield_left.png);
+	background-repeat: no-repeat;
+}
+div.searchField_lead {
+	height: 24px;
+	float: left;
+	font-weight: bold;
+	background-image: url(/images/admin/searchfield_mid.png);
+	background-repeat: repeat-x;
+}
+.searchMenuLabel {
+	cursor: pointer;
+	width: 15px;
+	font-size: 18px;
+	color: #888;
+	margin-right: 5px;
+}
+.CISelected .searchMenuLabel { color: white; font-weight: bold;}
+
+div.searchField_mid { margin: 0; float: left; height: 24px; }
+div.searchField_mid input.searchField {
+	vertical-align: middle;
+	margin: 0;
+	height: 24px;
+	background: transparent url(/images/admin/searchfield_mid.png) repeat-x scroll 0 0;
+	border: medium none;
+}
+div.searchField_right {
+	margin: 0;
+	float: left;
+	width: 11px;
+	height: 24px;
+	background-image: url(/images/admin/searchfield_right.png);
+	background-repeat: no-repeat;
+}
+div#advancedSearchDiv { display: none; }
+div#advancedSearchDiv table tr.CIOddSkin {
+	background-color: #545C64;
+}
+
+table {
+	font-size: 10pt;
+	width: 100%;
+	border: none;
+}
+
+table > thead > tr > td {
+	background-color: #DDD;
+	padding: 3px;
+}
+
+table > tfoot > tr > td {
+	border-top: 1px solid #CCC;
+}
+
+fieldset {
+	border: 1px solid #AAA;
+}
+
+fieldset > legend {
+	color: #385198;
+}
+
+table > tbody > tr > td.label {
+	vertical-align: top;
+	text-align: right;
+	width: 100px;
+}
+
+table > tbody > tr > td.wide {
+	width: 150px;
+}
+
+table > tbody > tr > td.wider {
+	width: 200px;
+}
+
+table > tbody > tr > td.widest {
+	width: 250px;
+}
+
+hr {
+	width: 100%;
+	border-bottom: 1px solid white;
+	border-top: 1px dashed #AAA;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+.stripe {
+	background-color: #F3F3F3;
+}
+.webOrder {
+	background-color: #D1F8AD !important;
+}
+.thisCustomer {
+	background-color: #F66 !important;
+}
+
+tr.hoverable:hover {
+	background-color: #C9E4FF !important;
+}
+
+div#quickMail_hud {
+	z-index: 50;
+	border: 1px solid #AAA;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 10px;
+	background-color: #EEE;
+	display: none;
+}
+
+div#quickMail_hud span#quickMail_hud_name {
+	font-weight: bold;
+}
+
+div#quickMail_hud table {
+	font-size: 9pt;
+}
+
+img.inlineIcon {
+	position: relative;
+	top: 3px;
+}
+
+.hasToolTip:hover {
+	cursor: pointer;
+}
+
+.tooltip {
+	background-color: #FFFEDE;
+	z-index: 99;
+	padding: 3px;
+}
+
+#contractorFinder {
+	width: 24px; height: 24px;
+	background-image: url(/images/admin/contractor_finder.png);
+	float: left;
+	margin-left: 7px;
+	margin-top: 1px;
+	cursor: pointer;
+}
+#scopeToolbar {
+	float: left;
+	padding: 4px 100px 0 20px;
+}
+#scopeToolbar > a {
+	font-size: 12px;
+	background-color: #6381B3;
+	padding: 2px 5px 2px 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #EEE;
+	margin-left: 5px;
+	text-decoration: none;
+}
+#scopeToolbar > a:hover {
+	background-color: #B7CDEB;
+	color: white;
+}
+
+tr.notification td {
+	text-align: left;
+	vertical-align: middle;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	font-size: 12px;
+}
+tr.notification td.bell {
+	width: 30px;
+	border-left: 1px solid #CCC;
+}
+tr.notification td.text {
+	border-right: 1px solid #CCC;
+}
+.notification_resource {
+	background-color: #EEE;
+}
+.notification_info {
+	background-color: #E4ECFF;
+}
+.notification_problem {
+	background-color: #FFE5D1;
+}
+.small {
+	font-size: 12px;
+}
+
+.gray { color: gray; }
+
+.transaction_approved {
+	color: black;
+}
+
+.transaction_declined {
+	color: #A60101;
+	font-weight: bold;
+}
+
+.transaction_invalidcard {
+	color: #999;
+	font-weight: bold;
+}
+.transaction_expiredcard {
+	color: #A67621;
+	font-weight: bold;
+}
+
+.transaction_avsmismatch {
+	color: #142465;
+	font-weight: bold;
+}
+
+.transaction_duplicate {
+	color: #999;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+a.CCReplace {
+	background-color: #DDD;
+}
+a.CCReplace:hover {
+	background-color: #FFF7D8;
+	text-decoration: none;
+}
+div.fieldWithErrors {
+	display: inline;
+}

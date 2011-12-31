@@ -1,0 +1,30 @@
+<h2>All Claims</h2>
+<%= render :partial => 'claims_table', :locals => { :claims => @customer.claims } %>
+<br>
+<hr>
+
+<a name="add"></a>
+<h2>Make a New Claim</h2>
+<% form_for :claim, Claim.new, :url => {:controller => 'claims', :action => 'create'} do |f| %>
+<input type="hidden" name="force_coverages" value="true"/>
+<input type="hidden" name="claim[customer_id]" value="<%=@customer.id%>"/>
+<table>
+	<% i = 0 %>
+	<% @coverages.each do |coverage| %>
+	<tr>
+		<td class="wider label"><%=coverage.coverage_name%></td>
+		<td style="vertical-align: top;"><input type="checkbox" name="coverages[<%=coverage.id%>]"/></td>
+		<% if i == 0 %>
+		<td style="vertical-align: top;" rowspan="<%=@coverages.length%>">
+			Additional Claim Information:<br>
+			<%=f.text_area :claim_text%>
+			<br>
+			<%=submit_tag 'Make Claim'%>
+		</td>
+		<% end %>
+		<% i += 1 %>
+	</tr>
+	<% end %>
+</table>
+
+<% end %>

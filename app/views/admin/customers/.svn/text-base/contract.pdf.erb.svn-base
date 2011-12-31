@@ -1,0 +1,66 @@
+<img src="<%=RAILS_ROOT + '/public/images/pdf/header.jpg'%>"/>
+asdofmsdaofm
+<%
+=begin
+tab = "    "
+
+#pdf.start_new_page
+
+pdf.image("#{RAILS_ROOT}/public/images/pdf/header.jpg", :width => 620, :at => [-40, 757])
+
+
+pdf.text "\n\n\n\n\n\n\n\n"
+pdf.font('Times-Roman', :style => :bold) { pdf.text "OWNER:" }
+pdf.text @customer.name
+pdf.text @customer.first_property.address
+pdf.text @customer.first_property.city_state_zip
+
+order_info = [
+  ["#{@customer.rate_mode} RATE:", "$%.2f" % @customer.pay_amount.to_f],
+  ['ORDER DATE:',         @order_date],
+  ['CONTRACT NUMBER:',    @customer.contract_number],
+  ['CONTRACT TERM:',      @contract_term],
+  ['COVERED PROPERTY:',   'Same'],
+  [' ', ' '],
+  ['DWELLING TYPE:',      @customer.home_type || 'Unspecified'],
+  ['PAYMENT SELECTED:',   "#{@customer.num_payments} payment(s)"]
+]
+
+pdf.canvas do
+  pdf.bounding_box([300, 650]) do
+    # Very close to PDF::Writer's default SimpleTable output
+    pdf.table order_info, {
+     :vertical_padding => 2,
+     :horizontal_padding => 5,
+     #:row_colors => :pdf_writer,
+     :border_style => :grid,
+     :border_width => 0
+    }
+  end
+end
+
+pdf.span(500, :position => :left) do
+  pdf.text "\n\nYOUR HOME WARRANTY PROTECTS ALL OF THESE IMPORTANT HOME SYSTEMS AND APPLIANCES:\n\n#{@customer.coverage_text}\n\n"
+  pdf.font("Times-Roman", :style => :bold) do
+    pdf.text "For added assurance, you may protect any of the following for a modest fee by calling us at 888-500-2110.\n\n"
+  end
+  pdf.text "#{@coverage_options}\n\n"
+  pdf.text "Request Service 24 hours a day, 7 days a week:\nwww.nationwidehomewarranty.com#{tab * 6}1 (888) 500-2110", :size => 16
+  
+  pdf.text "\n\nI have reviewed the above information and give my consent to Nationwide Home Warranty to bill me in the method I have provided."
+  pdf.text "\n\n"
+  pdf.text "Signature of Participant: ________________________________#{tab}Date: _________________\n\n"
+  pdf.text "Name of Participant (print): _____________________________#{tab} Date: _________________"
+end
+
+pdf.start_new_page
+
+pdf.span(200, :position => :center) do
+  pdf.font("Times-Roman", :style => :bold) do
+    pdf.text "TERMS OF SERVICE AGREEMENT\nNATIONWIDE HOME WARRANTY\n\n\n"
+  end
+end
+
+pdf.text File.read("#{RAILS_ROOT}/app/views/admin/content/terms_of_service.html.erb");
+=end
+%>

@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 53
+deploy.rb
+database.yml
+database.yml .
+juggernaut.yml
+
+END

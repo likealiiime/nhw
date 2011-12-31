@@ -1,0 +1,28 @@
+@page {
+	margin: 10mm;
+}
+
+div#header {
+	width: 100%;
+}
+div#ownerInfo {
+	float: left;
+}
+div#contractInfo {
+	float: right;
+}
+div#content {
+	margin-top: 250px;
+}
+
+div.pagebreak { page-break-before: always; }
+
+ol.roman { list-style-type: lower-roman; }
+
+.big {
+	font-size: 1.3em;
+}
+
+div#tos {
+	font-size: 10pt;
+}

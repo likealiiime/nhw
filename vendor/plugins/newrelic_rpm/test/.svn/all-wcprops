@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test
+END
+test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/test_helper.rb
+END
+active_record_fixtures.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/active_record_fixtures.rb
+END

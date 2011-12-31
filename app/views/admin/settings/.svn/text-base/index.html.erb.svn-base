@@ -1,0 +1,58 @@
+<script type="text/javascript">
+	var sourcesTable = new CITable({
+		title: new CITitle({
+			title: 'Fax Sources',
+			style: CITitle.OnlyBottomBorderStyle
+		}),
+		get: '/admin/fax_sources/async_list',
+		post: {
+			url: '/admin/fax_sources/async_update',
+			paramsFn: function(record) { return { id: record.id } }
+		},
+		columns: [
+			new CIColumn({ header: 'Name', property: 'name', editor: { name: 'fax_source[name]' } }),
+			new CIColumn({ header: 'Number', width: 150, property: 'number', editor: { name: 'fax_source[number]' } }),
+			new CIColumn({ header: 'Email', property: 'address', editor: { name: 'fax_source[address]' } }),
+			new CIColumn({ header: 'Key', property: 'key', editor: { name: 'fax_source[key]' } }),
+			new CIColumn({ header: 'Password', property: 'password', editor: { name: 'fax_source[password]' } })
+		]
+	});
+	
+	var cancellationsTable = new CITable({
+		hideHeader: true,
+		title: new CITitle({
+			title: 'Cancellation Reasons',
+			style: CITitle.OnlyBottomBorderStyle
+		}),
+		get: '/admin/cancellation_reasons/async_list',
+		post: {
+			url: '/admin/cancellation_reasons/async_update',
+			paramsFn: function(record) { return { id: record.id } }
+		},
+		cssStyles: { CIFirmWidth: 350 },
+		columns: [
+			new CIColumn({ header: 'Reason', property: 'reason', editor: { name: 'reason[reason]' } })
+		]
+	});
+	var cancellationsForm = new CIForm({
+		label: 'Add Reason',
+		submitLabel: 'Add',
+		post: '/admin/cancellation_reasons/async_create',
+		fields: [
+			{ label: 'Reason:', property: 'reason', name: 'reason[reason]' }
+		],
+		PostedData: function() { cancellationsForm.clear(); cancellationsTable.getData(); }
+	});
+	
+	var tabs = new CITabPanel({
+		subviews: {
+			'Cancellation Reasons': new CIVPanel([ cancellationsTable, cancellationsForm ]),
+			'Fax Sources': sourcesTable
+		},
+		selectTab: 1
+	});
+	tabs.element($('layout_content'));
+	
+	cancellationsTable.getData();
+	sourcesTable.getData();
+</script>

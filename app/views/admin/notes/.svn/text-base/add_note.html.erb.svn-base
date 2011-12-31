@@ -1,0 +1,14 @@
+<h2>Add Note</h2>
+
+<% form_for :note, @note, :url => { :action => 'add_note' } do |f| %>
+	<fieldset><table class="form_table">
+	<% @note.errors.each_full do |message| %>
+		<tr><td class='error1' colspan='4'><%= message %></td></tr>
+	<% end %>
+		<tr><td class="label">Note:</td><td><%= f.text_area :note_text, :cols => 40,:rows => 5 %></td></tr>
+	</table></fieldset>
+	<%= hidden_field_tag("note[repair_id]", params[:id]) %>
+<%= hidden_field_tag("note[customer_id]", params[:customer_id]) %>
+<%= hidden_field_tag("note[author_id]", session[:account_id]) %>
+<%= submit_tag "Add Note" %>
+<% end %>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant
+END
+gem-public_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/gem-public_cert.pem
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/Rakefile
+END
+CONTRIBUTERS
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/CONTRIBUTERS
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/init.rb
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/CHANGELOG
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/MIT-LICENSE
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/README
+END

@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+los_angeles_contractor:
+  first_name: Joe
+  last_name: Contractor
+  company: Joes Contracting Company
+  job_title: Owner
+  phone: (310) 555-1212
+  mobile: 
+  fax: (310) 555-1221
+  email: joe@joecontracting.com
+  priority: Low
+  notes: A contractor in Los Angeles
+  
+new_york_contractor:
+  first_name: 
+  last_name: 
+  company: New York Contracting Company
+  job_title: 
+  phone: 
+  mobile: 
+  fax: 
+  email: 
+  priority: 
+  notes: 

@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+var table = new CITable({
+	title: new CITitle({ title: "<%=@customers.length%> Customers found" }),
+	columns: CIApplication.CustomerListColumns
+});
+table.element('layout_content');
+table.setCollection(<%=@customers.to_json%>);
+</script>

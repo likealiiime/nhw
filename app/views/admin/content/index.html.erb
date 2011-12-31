@@ -1,0 +1,65 @@
+<script type="text/javascript">
+	var contentRequest = new CIRequest({
+		get: { url: function() { return '/admin/content/async_load/' + pagesList.selected.slug; } },
+		GotData: function(content, json) { textarea.setValue(content.html); }
+	});
+	
+	var pagesList = new CISourceList({
+		title: new CITitle({ style: CITitle.OnlyBottomBorderStyle, title: 'Content' }),
+		get: '/admin/content/async_list',
+		identifyBy: 'label',
+		//frame: new CIRect({ width: 300 }),
+		cssStyles: { CIFirmWidth: 300 },
+		Selected: function() { contentRequest.get(); }
+	});
+	
+	var newPageForm = new CIForm({
+		title: 'Add Content',
+		submitLabel: 'Add New Content',
+		submittingLabel: 'Adding...',
+		post: '/admin/content/async_create',
+		PostedData: function() { this.clear(); pagesList.getData(); },
+		fields: [
+			{ label: 'Slug:', name: 'content[slug]' }
+		]
+	});
+	
+	var textarea = new CIFormField({
+		labelStyles: { display: 'none' },
+		property: 'html',
+		name: 'content[html]',
+		type: 'textarea',
+		rows: 40, cols: 75
+	});
+	
+	var saveLabel = "Save Content";
+	var panel = new CIHPanel({
+		cssStyles: { width: 'auto' },
+		content: [
+			new CIVPanel([ pagesList, newPageForm ]),
+			new CIVPanel([
+				new CIButton({
+					label: saveLabel,
+					post: {
+						url: function() { return '/admin/content/async_save/' + pagesList.selected.slug; },
+						params: function() { return { html: textarea.getValue() }; }
+					},
+					Clicked: function() { this.disable('Saving...'); },
+					PostedData: function() { this.enable(saveLabel); }
+				}),
+				textarea,
+				new CIButton({
+					label: saveLabel,
+					post: {
+						url: function() { return '/admin/content/async_save/' + pagesList.selected.slug; },
+						params: function() { return { html: textarea.getValue() }; }
+					},
+					Clicked: function() { this.disable('Saving...'); },
+					PostedData: function() { this.enable(saveLabel); }
+				})
+			])
+		]
+	});
+	panel.element($('layout_content'));
+	pagesList.getData();
+</script>

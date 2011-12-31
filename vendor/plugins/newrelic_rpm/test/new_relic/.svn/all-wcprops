@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic
+END
+shim_agent_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/shim_agent_test.rb
+END
+stats_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/stats_test.rb
+END
+metric_parser_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/metric_parser_test.rb
+END
+control_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/control_test.rb
+END
+environment_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/environment_test.rb
+END
+samplers_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/samplers_test.rb
+END
+deployments_api_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/deployments_api_test.rb
+END
+metric_spec_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/metric_spec_test.rb
+END
+version_number_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/new_relic/version_number_test.rb
+END

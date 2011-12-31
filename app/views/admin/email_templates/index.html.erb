@@ -1,0 +1,45 @@
+<h2>Email Templates</h2>
+<table cellpadding="5" cellspacing="0">
+	<thead><tr>
+		<td style="width: 100px;">Name</td>
+		<td>Subject</td>
+		<td>Body</td>
+		<td style="width: 75px;">&nbsp;</td>
+	</tr></thead>
+	<% @templates.each do |template| %>
+		<tr class="hoverable<%=cycle('', ' stripe')%>">
+			<td><%=template.name%></td>
+			<td><%=template.subject%></td>
+			<td><%=truncate(strip_tags(template.body), :length => 85)%></td>
+			<td>
+				<a href="/admin/email_templates/edit/<%=template.id%>">Edit</a>&nbsp;&nbsp;
+				<% unless template.locked %>
+				<%= link_to 'Delete', "/admin/email_templates/destroy/#{template.id}", :confirm => "Are you sure you want to permanently delete this Email Template? This operation cannot be undone." %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<br>
+<hr>
+
+<h2>Add Template</h2>
+<% form_for :email_template, EmailTemplate.new, :url => {:action => 'create'} do |f| %><table class="form_table">
+	<tr>
+		<td class="label">Template Name:</td>
+		<td><%=f.text_field :name %></td>
+	</tr>
+	<tr>
+		<td class="label">Subject:</td>
+		<td><%=f.text_field :subject %></td>
+	</tr>
+	<tr>
+		<td class="label" style="vertical-align: top;">Body:</td>
+		<td><%=f.text_area :body %></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><%=submit_tag 'Add New Template'%></td>
+	</tr>
+</table><% end %>

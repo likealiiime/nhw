@@ -1,0 +1,61 @@
+<img src="<%=RAILS_ROOT%>/public/images/pdf/header.jpg"/>
+
+<div id="header">
+	<div id="ownerInfo"><p>
+		OWNER:<br/>
+		<%=@customer.name%><br/>
+		<%=@customer.first_property.address%><br/>
+		<%=@customer.first_property.city_state_zip%><br/>
+	</p></div>
+	<div id="contractInfo">
+		<table cellpadding="2">
+			<tr>
+				<td><%=@customer.rate_mode%> RATE:</td>
+				<td><%="$%.2f" % @customer.pay_amount.to_f%></td>
+			</tr>
+			<tr>
+				<td>ORDER DATE:</td>
+				<td><%=@order_date%></td>
+			</tr>
+			<tr>
+				<td>CONTRACT NUMBER:</td>
+				<td><%=@customer.contract_number%></td>
+			</tr>
+			<tr>
+				<td>CONTRACT TERM:</td>
+				<td><%=@contract_term%></td>
+			</tr>
+			<tr>
+				<td>COVERED PROPERTY:</td>
+				<td>Same</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td>DWELLING TYPE:</td>
+				<td><%=@customer.home_type || 'Unspecified'%></td>
+			</tr>
+			<tr>
+				<td>PAYMENT SELECTED:</td>
+				<td><%=@num_payments%> payment(s)</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div id="content">
+	<p>YOUR HOME WARRANTY PROTECTS ALL OF THESE IMPORTANT HOME SYSTEMS AND APPLIANCES:</p>
+	<p><%=@customer.coverage_text%></p>
+	<p><strong>For added assurance, you may protect any of the following for a modest fee by calling us at 718-943-6920.</strong></p>
+	<p><%=@coverage_options%></p>
+	<p>Request Service:</p>
+	<p class="big"><a href="www.nationwidehomewarranty.com">www.nationwidehomewarranty.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(718) 943-6920</p>
+	<p>I have reviewed the above information and give my consent to Nationwide Home Warranty to bill me in the method I have provided.</p>
+	<br/>
+	<p>Signature of Participant: __________________________&nbsp;Date: _________________</p>
+	<p>Name of Participant (print): _______________________&nbsp;Date: _________________</p>
+</div>
+
+<div class="pagebreak">&nbsp;</div>
+
+<p style="text-align: center;"><strong>TERMS OF SERVICE AGREEMENT<br/>NATIONWIDE HOME WARRANTY</strong></p>
+<div id="tos"><%=@tos%></div>

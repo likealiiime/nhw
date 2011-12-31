@@ -1,0 +1,7 @@
+<% selected='selected="selected"' %>
+<% timezone ||= -5 %>
+<select name="account[timezone]">
+<% Account.timezones.each do |pair| %>
+	<option <%=selected if timezone.to_i == pair[0]%> value="<%=pair[0]%>"><%=pair[1]%></option>
+<% end %>
+</select>

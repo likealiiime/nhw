@@ -1,0 +1,42 @@
+<h2><%=@repairs.length%> Repair(s)</h2>
+
+<table cellspacing="0" cellpadding="3">
+	<thead><tr>
+		<td style="font-weight: bold; width: 50px;">Date Requested</td>
+		<td style="font-weight: bold; width: 100px;">Customer</td>
+		<td style="font-weight: bold; width: 125px;">Address</td>
+		<!-- <td style="font-weight: bold; width: 150px;">Claim</td> -->
+		<td style="font-weight: bold; width: 50px;">Authorization</td>
+		<td style="font-weight: bold; width: 50px;">Status</td>
+		<td style="font-weight: bold; width: 70px;">Payment</td>
+		<td style="font-weight: bold; width: 50px;">&nbsp;</td>
+	</tr></thead>
+<% @repairs.each do |repair| %>
+	<tr class="hoverable <%=cycle('stripe', '')%>">
+		<td><%= repair.created_at.strftime(strftime_date) %></td>
+		<td><%= repair.claim.customer.name %></td>
+		<td><%= repair.claim.property ? repair.claim.property.to_s : '(Call Nationwide for Correct Address)' %></td>
+		<!-- <td><%= repair.claim.text %></td> -->
+		<td style="color: <%=repair.authorized? ? 'green' : 'red' %>;"><%= repair.formatted_authorization %></td>
+		<td style="color: <%=repair.complete? ? 'green' : 'red' %>;"><%= repair.formatted_status %>
+		<td><%= repair.payment ? repair.payment.paid_on : 'Pending' %></td>
+		<td>
+			<% unless not repair.authorized? or repair.complete? %>
+				<a href="/admin/repairs/complete/<%=repair.id%>">Complete Repair</a>
+			<% end %>
+		</td>
+	</tr>
+<% end %>
+</table>
+
+<br /><hr /><br />
+
+<form action="/admin/contractors/update_invoice_receipt/<%=current_account.parent.id%>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" />
+	<% selected = 'selected="selected"' %>
+	Receive Invoices As: <select name="contractor[receive_invoice_as]">
+		<option value="email" <%=selected if current_account.parent.receive_invoice_as == 'email'%>>Email</option>
+		<option value="fax" <%=selected if current_account.parent.receive_invoice_as == 'fax'%>>Fax</option>
+	</select>
+	<input type="submit" value="Change"/>
+</form>

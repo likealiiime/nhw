@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  claim_id: 1
+  contractor_id: 1
+
+two:
+  claim_id: 1
+  contractor_id: 1

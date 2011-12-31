@@ -1,0 +1,16 @@
+div#layout_banner {
+	width: 100%;
+	position: fixed;
+	top: 0; left: 0;
+}
+div#layout_toolbar {
+	color: white;
+	background-color: #3E6CB7;
+	width: 100%;
+	padding: 5px;
+}
+div#layout_toolbar a {
+	color: white;
+	text-decoration: none;
+	margin-left: 10px;
+}

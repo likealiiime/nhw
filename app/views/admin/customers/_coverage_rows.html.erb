@@ -1,0 +1,15 @@
+<% getaquote ||= false %>
+<% hide_prices ||= false %>
+
+<% Coverage.find_all_by_optional(1).each do |coverage| %>
+	<% checked = 'checked="checked"' if customer and customer.has_coverage?(coverage) %>
+	<tr>
+		<% if getaquote %>
+			<td style="vertical-align: top;"><input onclick="updatePlanTotal()" class="coverageCheckbox" type="checkbox" value="<%=coverage.price%>" name="coverages[<%=coverage.id%>]"/></td>
+		<% end %>
+		<td class="<%= 'wider label' unless getaquote %>"><%=coverage.coverage_name%>&nbsp;<%="$#{coverage.price}" unless hide_prices %></td>
+		<% unless getaquote %>
+			<td><input <%=checked%> type="checkbox" name="coverages[<%=coverage.id%>]"/></td>
+		<% end %>
+	</tr>
+<% end %>

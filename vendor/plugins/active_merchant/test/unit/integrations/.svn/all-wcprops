@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations
+END
+gestpay_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/gestpay_module_test.rb
+END
+two_checkout_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/two_checkout_module_test.rb
+END
+bogus_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/bogus_module_test.rb
+END
+action_view_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/action_view_helper_test.rb
+END
+hi_trust_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/hi_trust_module_test.rb
+END
+chronopay_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/chronopay_module_test.rb
+END
+nochex_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/nochex_module_test.rb
+END
+paypal_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/paypal_module_test.rb
+END
+quickpay_module_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/nhw/!svn/ver/386/trunk/vendor/plugins/active_merchant/test/unit/integrations/quickpay_module_test.rb
+END

@@ -1,0 +1,10 @@
+<h2>View Note</h2>
+<table cellpadding='2' cellspacing='2' border='0' width='100%'>
+<tr><td><strong>Note</strong></td><td><strong>Added On</strong></td></tr>	
+<%  
+  @note.each do |note|
+%>
+<tr><td width='200'><%= note.note_text %></td><td><%= note.updated_at.strftime(strftime_date) %></td></tr>
+<tr><td colspan='3' height='5px'></td></tr>
+<% end %>
+</table>	

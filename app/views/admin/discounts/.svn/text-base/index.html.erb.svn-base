@@ -1,0 +1,58 @@
+<h2>Discounts</h2>
+<table>
+	<thead><tr>
+		<td style="width: 100px;">Code</td>
+		<td>Starts</td>
+		<td>Ends</td>
+		<td>Amount</td>
+		<td style="width: 75px;">&nbsp;</td>
+	</tr></thead>
+	<% @discounts.each do |discount| %>
+		<tr>
+			<td><%=discount.code%></td>
+			<td><%=discount.starts_at.strftime(strftime_date) if discount.starts_at %></td>
+			<td><%=discount.ends_at.strftime(strftime_date) if discount.ends_at %></td>
+			<td><%=discount.amount%></td>
+			<td>
+				<a href="/admin/discounts/edit/<%=discount.id%>">Edit</a>&nbsp;&nbsp;
+				<%= link_to 'Delete', "/admin/discounts/destroy/#{discount.id}", :confirm => "Are you sure you want to permanently delete this Discount? This operation cannot be undone." %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<br>
+<hr>
+
+<h2>Add Discount</h2>
+<% this = Time.now.utc %>
+<% timezone = current_account.timezone + (this.isdst ? 1.hours : 0.hour) %>
+<% first_of_the_month = Time.utc(this.year, this.month, 1, timezone.abs, 0,0,0) + timezone %>
+<% form_for :discount, Discount.new, :url => {:action => 'create'} do |f| %><table class="form_table">
+	<tr>
+		<td class="label">Monthly?</td>
+		<td><%=f.check_box :is_monthly%></td>
+	</tr>
+	<tr>
+		<td class="label">Starts:</td>
+		<td><%=f.text_field :starts_at, :size => 8, :value => first_of_the_month.strftime(strftime_date) %></td>
+	</tr>
+	<tr>
+		<td class="label">Ends:</td>
+		<td><%=f.text_field :ends_at, :size => 8%></td>
+	</tr>
+	<tr>
+		<td class="label">Amount:</td>
+		<td>
+			<%=f.text_field :value, :size => 8%><input type="checkbox" name="is_percentage"/>&nbsp;Is a percentage
+		</td>
+	</tr>
+	<tr>
+		<td class="label">Code:</td>
+		<td><%=f.text_field :name, :size => 8%>&nbsp;<span class="gray">If this is a Monthly Discount, Code will be set automatically</span></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><%=submit_tag "Add New Discount"%></td>
+	</tr>
+</table><% end %>

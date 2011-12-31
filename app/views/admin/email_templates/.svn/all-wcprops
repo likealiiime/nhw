@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/nhw/!svn/ver/359/trunk/app/views/admin/email_templates
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/228/trunk/app/views/admin/email_templates/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/nhw/!svn/ver/359/trunk/app/views/admin/email_templates/index.html.erb
+END

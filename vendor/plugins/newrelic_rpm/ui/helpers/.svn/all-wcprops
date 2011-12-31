@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/ui/helpers
+END
+newrelic_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/ui/helpers/newrelic_helper.rb
+END
+google_pie_chart.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/ui/helpers/google_pie_chart.rb
+END

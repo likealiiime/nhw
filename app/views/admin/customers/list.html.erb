@@ -1,0 +1,55 @@
+<% 
+	header = case @status
+	when 'new'
+		"New Customers"
+	when 'leftmessage'
+		"Left Messages"
+	when 'deleted'
+		"Deleted Customers"
+	when 'followup'
+		"Followed Up"
+	when 'completedorder'
+		"Completed Orders"
+	when 'proforma'
+		"Proforma"
+	when 'cancelled'
+		"Cancelled"
+	when 'tobebilled'
+		"To Be Billed"
+	end
+-%>
+
+<script type="text/javascript">
+	var itemsPerPage = 30;
+	
+	var title = new CITitle({
+		<% if current_account.admin? && (@status =~ /leftmessage|deleted|followup/)%>
+		content: new CIButton({
+			iconSrc: '/images/icons/action/revert.png',
+			label: 'Revert this page to New',
+			post: {
+				url: '/admin/customers/revert_to_new/<%=@status%>',
+				params: function() { return {
+					page: table.paginator.page,
+					count: itemsPerPage
+				}; }
+			},
+			PostedData: function() {
+				table.paginator.reloadPage();
+			}
+		}),
+		<% end %>
+		title: "<%=header%>, <%=@count%> total"
+	});
+	var table = new CITable({
+		title: title,
+		cssClass: 'CIkCenterUsingMargin',
+		get: '/admin/customers/async_list/<%=@status%>',
+		columns: CIApplication.CustomerListColumns,
+		paginator: { itemsPerPage: itemsPerPage }
+	});
+	table.toolbar.addItemToLeft(table.paginator);
+
+	table.element($('layout_content'));
+	table.paginator.selectPage(<%=@page%>);
+</script>

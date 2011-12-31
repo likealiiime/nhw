@@ -1,0 +1,28 @@
+#!/bin/bash
+SSH_HOST="nhw"
+DESTINATION="nhw.sql"
+MYSQL_USER="root"
+MYSQL_PASS=""
+MYSQL_DB="nhw"
+
+echo "* Executing cap command to dump, then tar database..."
+cap production COMMAND="mysqldump -h mysql50-8-master -u nationwide_db -pq6kcBN8gxQzZ nationwide_production > /home/nationwide/nhw.sql && tar -cvzf nhw.sql.tar.gz nhw.sql" invoke
+
+echo "* Securely copying. This may take a while..."
+scp ${SSH_HOST}:/home/nationwide/nhw.sql.tar.gz ${DESTINATION}.tar.gz
+
+echo "* Untarring database..."
+tar -zxvf ${DESTINATION}.tar.gz
+
+echo "* Deleting archive..."
+rm -f ${DESTINATION}.tar.gz
+
+echo "* Importing. This may take a while..."
+/usr/local/mysql/bin/mysql -h localhost -u $MYSQL_USER $MYSQL_DB < $DESTINATION
+echo "* Got and imported database successfully!"
+
+echo "* Syncing faxes. This may take a while..."
+rsync -av nhw:/data/nationwide/shared/faxes .
+echo "* Copies faxes/ sucessfully!"
+
+exit 0

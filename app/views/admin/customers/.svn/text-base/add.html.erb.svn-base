@@ -1,0 +1,32 @@
+<h2>Customer Information</h2>
+
+<% form_for :customer, @customer, :url => { :action => 'create' } do |f| %>
+<% fields_for :property, @property do |property| %>
+<% fields_for :billing, @billing do |billing| %>
+	<fieldset><table class="form_table">
+		<tr><td class="label">First Name:</td><td><%= f.text_field :first_name %></td></tr>
+		<tr><td class="label">Last Name:</td><td><%= f.text_field :last_name %></td></tr>
+		<tr><td class="label">Email:</td><td><%= f.text_field :email %></td></tr>
+		<tr><td class="label">Phone Number:</td><td><%= f.text_field :customer_phone, :size => 15 %></td></tr>
+	</table></fieldset>
+	<table><tr>
+		<td style="vertical-align: top;">
+			<fieldset><legend>Coverage Address</legend><table class="form_table">
+				<tr><td class="label">Address:</td><td><%= property.text_field :address %></td></tr>
+				<tr><td class="label">City:</td><td><%= property.text_field :city %></td></tr>
+				<tr><td class="label">State:</td><td><%= property.text_field :state, :size => 2 %></td></tr>
+				<tr><td class="label">Zip Code:</td><td><%= property.text_field :zip_code, :size => 5 %>
+			</table></fieldset>
+		</td><td>
+			<fieldset><legend>Billing Address</legend><table class="form_table">
+				<tr><td>&nbsp;</td><td><a href="#" onclick="copyBillingAddressFromCoverage()">Coverage and Billing Addresses are same</a></td></tr>
+				<tr><td class="label">Address:</td><td><%= billing.text_field :address %></td></tr>
+				<tr><td class="label">City:</td><td><%= billing.text_field :city %></td></tr>
+				<tr><td class="label">State:</td><td><%= billing.text_field :state, :size => 2 %></td></tr>
+				<tr><td class="label">Zip Code:</td><td><%= billing.text_field :zip_code, :size => 5 %>
+			</table></fieldset>
+		</td>
+	</table>
+	<input type="hidden" name="customer[status_id]" value="0">
+	<%= submit_tag "Add New Customer" %>
+<% end %><% end %><% end %>

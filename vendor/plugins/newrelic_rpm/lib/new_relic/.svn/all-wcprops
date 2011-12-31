@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic
+END
+local_environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/local_environment.rb
+END
+rack.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/rack.rb
+END
+control.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/control.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/version.rb
+END
+transaction_sample.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/transaction_sample.rb
+END
+transaction_analysis.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/transaction_analysis.rb
+END
+recipes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/recipes.rb
+END
+merbtasks.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/merbtasks.rb
+END
+metric_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/metric_spec.rb
+END
+stats.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/stats.rb
+END
+noticed_error.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/noticed_error.rb
+END
+agent.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent.rb
+END
+metric_parser.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/metric_parser.rb
+END
+metrics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/metrics.rb
+END
+metric_data.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/metric_data.rb
+END

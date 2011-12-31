@@ -1,0 +1,46 @@
+<script type="text/javascript">
+	var table = new CITable({
+		title: new CITitle({ title: 'Claims Dashboard' }),
+		columns: [
+			new CIColumn({ header: 'Claim #', property: 'claim_number', width: 125 }),
+			new CIColumn({ header: 'Last Updated', property: 'updated', width: 135 }),
+			new CIColumn({ header: 'Agent', property: 'agent_name', width: 70 }),
+			new CIColumn({ property: 'status_code',
+				width: 25,
+				renderer: function(code, claim) {
+					return new CIImageLink({
+						src: '/images/admin/claim_statuses/' + code + '_active.png',
+						alt: claim.status
+					});
+				}
+			}),
+			new CIColumn({ header: 'Summary', property: 'summary' }),
+			new CIColumn({
+				width: 25,
+				property: 'customer_id',
+				renderer: function(id) {
+					return '<a href="/admin/customers/edit/' + id + '#claims">Edit</a>'
+				}
+			})
+		],
+		get: '/admin/claims/async_claims',
+		paginator: {
+			itemsPerPage: 15,
+			filters: new CIFilterSet({
+				filters: [
+					<%= Claim.statuses.collect { |label, name|
+							"new CIFilter({name:'#{name}', label:'#{label}', src:'/images/admin/claim_statuses/#{name}.png', active:#{@active_statuses.include?(name)}})"
+						}.join(', ')
+					%>
+				],
+				cssStyles: {
+					position: 'relative', bottom: 3
+				}
+			})
+		}
+	});
+	table.toolbar.addItemToLeft(table.paginator);
+	
+	table.element('layout_content');
+	table.paginator.selectPage(<%=@page%>);
+</script>

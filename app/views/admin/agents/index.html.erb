@@ -1,0 +1,50 @@
+<h2>Agents&nbsp;&nbsp;&nbsp;</h2>
+<table cellspacing="0" cellpadding="3">
+	<thead><tr>
+		<td style="width: 75px;">Name</td>
+		<td style="width: 110px;">Email</td>
+		<td style="width: 75px;">Role</td>
+		<td style="width: 30px;">&nbsp;</td>
+	</tr></thead>
+	<% @agents.each do |agent| %>
+	<% next if agent.empty? %>
+	<tr class="hoverable <%=cycle('stripe', '')%>">
+		<td><%= agent.name %></td>
+		<td><%= agent.account.email %></td>
+		<td><%= agent.account.role.capitalize %></td>
+		<td>
+			<a href="/admin/agents/edit/<%=agent.id%>">Edit</a>&nbsp;&nbsp;
+			<%= link_to 'Delete', "/admin/agents/destroy/#{agent.id}", :confirm => "Are you sure you want to permanently delete this Agent? This operation cannot be undone." %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+
+<br>
+<hr>
+
+<h2>Add Agent</h2>
+<form method="post" action="/admin/agents/create">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+	<table class="form_table">
+		<tr>
+			<td class="label">Name:</td><td><input type="text" name="agent[name]"></td>
+		</tr><tr>
+			<td class="label">Email:</td><td><input type="text" name="account[email]"/></td>
+		</tr><tr>
+			<td class="label">Password:</td><td><input type="password" name="account[password]"/></td>
+		</tr><tr>
+			<td class="label">Role:</td><td>
+				<select name="account[role]"><% Account.roles.each do |role| %>
+					<option value="<%=role%>"><%=role.capitalize%></option>
+				<% end %></select>
+			</td>
+		</tr><tr>
+			<td class="label">Timezone:</td>
+			<td><%= render :partial => 'admin/accounts/timezone_select_tag' %></td>
+		</tr><tr>
+			<td>&nbsp;</td>
+			<td><input type="submit" value="Add New Agent" /></td>
+		</tr>
+	</table>
+</form>

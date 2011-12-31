@@ -1,0 +1,23 @@
+<table cellpadding="2" cellspacing="0" border="0" style="border-spacing: 0 5px;">
+	<% @notifications.each do |notification| %>
+		<tr class="notification <%=notification.css_class%>">
+			<td class="bell">
+				<img src="<%=notification.image_url%>" alt="<%=notification.notification_type.capitalize%>"/>
+			</td>
+			<td class="text">
+				<%=notification.subject_link%>
+				<% if (notification.subject_summary || '')[-1..-1] == 's' and not ['Customer', 'Contractor'].include?(notification.subject_type) %>
+					were
+				<% else %>
+					was
+				<% end %>
+				<%=notification.message%> <%=notification.formatted_date%>
+				<% if notification.actor %>
+					by <a href="<%=notification.actor.edit_url%>">
+						<%= notification.actor_summary%>
+					</a>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,20 @@
+#Options +FollowSymLinks
+ErrorDocument 500 "Application error Rails application failed to start properly"
+#<IfModule mod_rewrite.c>
+
+#  RewriteEngine On
+
+  # Force removal of www
+  #RewriteCond %{HTTP_HOST} ^www\.(.+)$
+  #RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+  # (Or force addition of www depending on your cert)
+#  RewriteEngine On
+#  RewriteCond %{HTTP_HOST} !^www\.
+#  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L] 
+
+  # Now Force traffic to use HTTPS
+  #RewriteCond %{SERVER_PORT} !443
+  #RewriteRule ^(.*)$ https://www.nationwidehomewarranty.com/$1 [R=301,L]
+
+#</IfModule>

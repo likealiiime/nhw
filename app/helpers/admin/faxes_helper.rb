@@ -1,0 +1,2 @@
+module Admin::FaxesHelper
+end

@@ -1,0 +1,45 @@
+<br>
+<div id="contractors"></div>
+
+<br>
+<hr>
+
+<h2>Add Contractor</h2>
+<% form_for :contractor, @contractor, :url => { :action => 'create' } do |f| %>
+	<%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+	<table class="form_table">
+		<tr>
+			<td class="label"><%= f.label :company %>:&nbsp;</td>
+			<td><%= f.text_field :company %></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><%= submit_tag "Add & Continue Editing" %></td>
+		</tr>
+	</table>
+<% end %>
+
+<script type="text/javascript">
+var contractors = new CITable({
+	title: new CITitle({ title: "Contractors" }),
+	get: '/admin/contractors/async_get_contractors',
+	paginator: { type: 'alpha' },
+	cssStyles: { height: 500, overflow: 'auto' },
+	columns: [
+		new CIColumn({ property: 'flagged', width: 16, cssStyes: { 'text-align': 'center' }, renderer: function(flagged, record) {
+			if (flagged) return '<img src="/images/icons/red_flag_16.png" alt="Flagged"/>';
+		} }), 
+		new CIColumn({ header: 'Company', property: 'company', width: 350 }),
+		new CIColumn({ header: 'Email', property: 'email' }),
+		new CIColumn({ header: 'Phone', property: 'phone', width: 120 }),
+		new CIColumn({ header: 'Rating', property: 'stars', width: 40 }),
+		new CIColumn({ width: 100, property: 'id', renderer: function(id) {
+			return '<a href="/admin/contractors/edit/' + id + '">Edit</a>&nbsp;&nbsp;<a href="/admin/contractors/destroy/' + id + '" onclick="if(confirm(\'Are you sure you want to permanently delete this Contractor? This operation cannot be undone.\')) { return true; }; return false;">Delete</a>'
+		} })
+	]
+});
+contractors.toolbar.addItemToLeft(contractors.paginator);
+
+contractors.element($('contractors'));
+contractors.paginator.selectPage('<%=session[:last_contractors_page] || 'a'%>');
+</script>

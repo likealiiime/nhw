@@ -1,0 +1,64 @@
+<table class="form_table">
+	<tr>
+		<td class="label"><%= f.label :first_name %>:&nbsp;</td><td><%= f.text_field :first_name %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :last_name %>:&nbsp;</td><td><%= f.text_field :last_name %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :company %>:&nbsp;</td><td><%= f.text_field :company %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :job_title %>:&nbsp;</td><td><%= f.text_field :job_title %></td>
+	</tr>
+	<% fields_for :address, address do |a| %>
+		<tr>
+			<td class="label"><%= a.label :address, "Street" %>:&nbsp;</td><td><%= a.text_field :address %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= a.label :city %>:&nbsp;</td><td><%= a.text_field :city %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= a.label :state %>:&nbsp;</td><td><%= a.select :state, state_select_options %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= a.label :zip_code %>:&nbsp;</td><td><%= a.text_field :zip_code %></td>
+		</tr>
+	<% end %>
+	<tr>
+		<td class="label"><%= f.label :email %>:&nbsp;</td><td><%= f.text_field :email %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :phone %>:&nbsp;</td><td><%= f.text_field :phone %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :mobile, "Cell" %>:&nbsp;</td><td><%= f.text_field :mobile %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :fax, "Fax" %>:&nbsp;</td><td><%= f.text_field :fax %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :notes %>:&nbsp;</td><td><%= f.text_area :notes, :rows => 6, :cols => 40 %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :priority %>:&nbsp;</td><td><%= f.select :priority, ["Low", "Normal"] %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :rating %>:&nbsp;</td>
+		<td>
+			<select name="contractor[rating]" id="contractor_rating">
+				<%# It seems you can't use (5..0), it doesn't want to count down using #each %>
+				<% 6.times do |i| %><% x = 5-i %>
+					<% selected = 'selected="selected"' if @contractor.rating == x %>
+					<option value="<%=x%>" <%=selected%>><%= '*' * x %></option>
+				<% end %>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="label"><img src="/images/icons/red_flag_16.png" src="Flagged" />&nbsp;</td>
+		<td><%= f.check_box :flagged %>&nbsp; This contractor is flagged for warning</td>
+	<tr>
+		<td class="label">&nbsp;</td><td><%= submit_tag submit_label %></td>
+	</tr>
+</table>

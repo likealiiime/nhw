@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/nhw/!svn/ver/425/trunk/test/fixtures
+END
+accounts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/nhw/!svn/ver/24/trunk/test/fixtures/accounts.yml
+END
+renewals.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/nhw/!svn/ver/250/trunk/test/fixtures/renewals.yml
+END
+fax_sources.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/nhw/!svn/ver/264/trunk/test/fixtures/fax_sources.yml
+END
+agents.yml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/nhw/!svn/ver/24/trunk/test/fixtures/agents.yml
+END
+customers.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/nhw/!svn/ver/94/trunk/test/fixtures/customers.yml
+END
+credit_cards.yml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/nhw/!svn/ver/380/trunk/test/fixtures/credit_cards.yml
+END
+cancellation_reasons.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/nhw/!svn/ver/183/trunk/test/fixtures/cancellation_reasons.yml
+END
+notes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/nhw/!svn/ver/16/trunk/test/fixtures/notes.yml
+END
+properties.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/nhw/!svn/ver/135/trunk/test/fixtures/properties.yml
+END
+signature_hashes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/nhw/!svn/ver/202/trunk/test/fixtures/signature_hashes.yml
+END
+contractor_payments.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/nhw/!svn/ver/198/trunk/test/fixtures/contractor_payments.yml
+END
+i_contact_requests.yml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/nhw/!svn/ver/241/trunk/test/fixtures/i_contact_requests.yml
+END
+contractors.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/nhw/!svn/ver/135/trunk/test/fixtures/contractors.yml
+END
+repairs.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/nhw/!svn/ver/137/trunk/test/fixtures/repairs.yml
+END
+email_templates.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/nhw/!svn/ver/94/trunk/test/fixtures/email_templates.yml
+END
+faxes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/nhw/!svn/ver/264/trunk/test/fixtures/faxes.yml
+END
+claims.yml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/nhw/!svn/ver/16/trunk/test/fixtures/claims.yml
+END
+transactions.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/nhw/!svn/ver/43/trunk/test/fixtures/transactions.yml
+END
+fax_assignable_joins.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/nhw/!svn/ver/282/trunk/test/fixtures/fax_assignable_joins.yml
+END
+notifications.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/nhw/!svn/ver/242/trunk/test/fixtures/notifications.yml
+END
+content.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/nhw/!svn/ver/425/trunk/test/fixtures/content.yml
+END
+discounts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/nhw/!svn/ver/50/trunk/test/fixtures/discounts.yml
+END
+addresses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/nhw/!svn/ver/157/trunk/test/fixtures/addresses.yml
+END
+packages.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/nhw/!svn/ver/16/trunk/test/fixtures/packages.yml
+END
+coverages.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/nhw/!svn/ver/16/trunk/test/fixtures/coverages.yml
+END

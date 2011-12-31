@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/nhw/!svn/ver/150/trunk/app/views/admin/notes
+END
+add.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/nhw/!svn/ver/144/trunk/app/views/admin/notes/add.html.erb
+END
+add_note.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/144/trunk/app/views/admin/notes/add_note.html.erb
+END
+view_note.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/nhw/!svn/ver/150/trunk/app/views/admin/notes/view_note.html.erb
+END

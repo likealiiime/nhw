@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/nhw/!svn/ver/358/trunk/lib/workers
+END
+icontact_worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/nhw/!svn/ver/448/trunk/lib/workers/icontact_worker.rb
+END
+fax_fetcher_worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/nhw/!svn/ver/279/trunk/lib/workers/fax_fetcher_worker.rb
+END

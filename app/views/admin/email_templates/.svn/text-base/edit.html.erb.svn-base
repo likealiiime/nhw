@@ -1,0 +1,31 @@
+<h2>Edit Email Template</h2>
+<% form_for :email_template, @email_template, :url => { :action => 'update', :id => @email_template.id } do |template| %>
+<table class="form_table">
+	<tr>
+		<td class="label">Template Name:</td>
+		<td>
+			<% if @email_template.locked %>
+				<%= @email_template.name %>
+			<% else %>
+				<%=template.text_field :name%>
+			<% end %>
+		</td>
+		<td rowspan="4" style="vertical-align: top;">
+			<h2>Placeholders</h2>
+			<p>Click a placeholder to append it to the email template.<p>
+			<% EmailTemplate.placeholders.each do |placeholder| %>
+				<p>{<a href="#" onclick="appendPlaceholder('<%=placeholder[0]%>')"><%=placeholder[0]%></a>}&nbsp;&nbsp;<span style="color: gray;"><%=placeholder[1]%></span></p>
+			<% end %>
+			<p>{<a href="#" onclick="appendPlaceholder('my name')">my name</a>}&nbsp;&nbsp;<span style="color: gray;"><%=current_account.parent.name%></span></p>
+		</td>
+	</tr>
+	<tr><td class="label">Subject:</td><td><%=template.text_field :subject%></td></tr>
+	<tr><td class="label" valign="top">Body:</td><td valign="top"><%=template.text_area :body, :cols => 70, :rows => 30%></td></tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td valign="top">
+			<%=submit_tag 'Save Email Template'%> or <a href="/admin/email_templates">Cancel</a>
+		</td>
+	</tr>
+</table>
+<% end %>

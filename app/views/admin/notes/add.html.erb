@@ -1,0 +1,15 @@
+<div style='padding-left:20px'>
+  <table cellpadding='2' cellspacing='2' border='0' width='100%'> 
+  <tr><td><strong>Claim Text</strong></td><td><strong>Client Name</strong></td><td><strong>Notes</strong></td><td><strong>View Notes</strong></td></tr>
+<%  
+@repair.each do |repair|
+  # claim = Claim.find(repair.claim_id)
+%>
+
+<tr><td><a href='#' alt='<%= repair.claim.claim_text %>' title='<%= repair.claim.claim_text %>'><%= truncate(repair.claim.claim_text,50) %></a></td><td><%= repair.claim.customer.first_name %>&nbsp;<%= repair.claim.customer.last_name %></td><td><%= link_to 'Add Note',{:action => 'add_note',:id => repair.id,:customer_id => repair.claim.customer_id} %></td><td><%= link_to 'View Notes',{:action => 'view_note',:id => repair.id} %></td></tr>
+
+<%  
+end
+%>
+</table>
+</div>

@@ -1,0 +1,63 @@
+<h2>Nationwide Home Warranty</h2>
+<h3>Customer Information - Customer ID: <%=@customer.id%></h3>
+<h3>Printed: <%=Time.now.strftime(strftime_date_time)%></h3>
+<table style="border: none;">
+	<tr>
+		<td>
+			<fieldset><legend>Customer Information</legend><table class="form_table">
+				<tr><td class="label">Contract:</td><td><%=@customer.contract_number%></td></tr>
+				<tr>
+					<td class="label">Added:</td>
+					<td><%= (@customer.created_at || Time.at(@customer.timestamp.to_i).utc).strftime(strftime_date_time) %></td>
+				</tr>
+				<tr><td class="label">Last Updated:</td><td><%=@customer.updated_at.strftime(strftime_date_time)%></td></tr>
+				<tr><td class="label">First Name:</td><td><%= @customer.first_name %></td></tr>
+				<tr><td class="label">Last Name:</td><td><%= @customer.last_name %></td></tr>
+				<tr><td class="label">Email:</td><td><a href="mailto:<%=@customer.email%>"><%=@customer.email%></a></td></tr>
+				<tr><td class="label">Phone Number:</td><td><%= @customer.customer_phone %></td></tr>
+				<tr><td class="label">Status:</td><td><%= @customer.status %></td></tr>
+				<tr><td class="label">Cancel Reason:</td><td><%= @customer.cancel_reason %></td></tr>
+			</table></fieldset>
+		</td>
+		<td rowspan="2">
+			<fieldset><legend>Coverage Information</legend><table class="form_table">
+				<tr><td class="label">List Price:</td><td><%="%5.2f" % @customer.list_price.to_f %></td></tr>
+				<tr><td class="label">Property Type:</td><td><%=(@customer.home_type || 'Unspecified').capitalize%></td></tr>
+				<tr>
+					<td class="label">Coverage Package:</td>
+					<td><%= @customer.package.package_name %></td>
+				</tr>
+				<%= render :partial => 'coverage_rows', :locals => { :customer => @customer } %>
+			</table></fieldset>
+		</td>
+	</tr>
+	
+	<tr><td valign="top">
+		<fieldset><legend>Billing Information</legend><table class="form_table">
+			<tr><td class="label">Credit Card:</td><td><%= @customer.credit_card_number %></td></tr>
+			<tr><td class="label">No. Payments:</td><td><%= @customer.num_payments %></td></tr>
+			<tr><td class="label">Amount Per Payment:</td><td>$<%= "%5.2f" % @customer.pay_amount.to_f %></td></tr>
+			<tr><td class="label">Total Payment:</td><td>$<%= "%5.2f" % (@customer.num_payments.to_i * @customer.pay_amount.to_f) %></td></tr>
+		</table></fieldset>
+	</td></tr>
+	
+	<tr><td valign="top">
+		<fieldset><legend>Properties</legend><table class="form_table">
+			<% @customer.properties.each do |p| %>
+			<tr><td class="label">Address:</td><td><%= p.address %></td></tr>
+			<tr><td class="label">City:</td><td><%= p.city %></td></tr>
+			<tr><td class="label">State:</td><td><%= p.state %></td></tr>
+			<tr><td class="label">Zip Code:</td><td><%= p.zip_code %></td></tr>
+			<tr><td class="label">AVS:</td><td><%= p.verified ? 'Verified' : 'Unverified' %></td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<% end %>
+		</table></fieldset>
+	</td><td valign="top">
+		<fieldset><legend>Billing Address</legend><table class="form_table">
+			<tr><td class="label">Address:</td><td><%= @customer.billing_address ? @customer.billing_address.address : '' %></td></tr>
+			<tr><td class="label">City:</td><td><%= @customer.billing_address ? @customer.billing_address.city : '' %></td></tr>
+			<tr><td class="label">State:</td><td><%= @customer.billing_address ? @customer.billing_address.state : '' %></td></tr>
+			<tr><td class="label">Zip Code:</td><td><%= @customer.billing_address ? @customer.billing_address.zip_code : '' %>
+		</table></fieldset>
+	</td></tr>
+</table>

@@ -1,0 +1,46 @@
+<script type="text/javascript">
+
+	var todaysCustomers = new CITable({
+		title: new CITitle({
+			title: 'Today&rsquo;s Customers'
+		}),
+		style: CITable.Style.override({
+			solidBorders: CIStyle.Left | CIStyle.Right
+		}),
+		cssClass: 'CIkCenterUsingMargin',
+		get: '/admin/customers/async_get_customers/today',
+		columns: CIApplication.CustomerListColumns,
+		paginator: { itemsPerPage: 15 },
+		cssStyles: { CIFirmWidth: 900 }
+	});
+	todaysCustomers.toolbar.addItemToLeft(todaysCustomers.paginator);
+
+	var yesterdaysCustomers = new CITable({
+		title: new CITitle({
+			title: 'Yesterday&rsquo;s Customers',
+			style: CITitle.UnroundedStyle
+		}),
+		style: CITable.Style.override({
+			solidBorders: CIStyle.Left | CIStyle.Right | CIStyle.Bottom
+		}),
+		cssStyles: { CIFirmWidth: 900 },
+		label: "Yesterday&rsquo;s Customers",
+		cssClass: 'CIkCenterUsingMargin CIkConnectedToElementBottom',
+		get: '/admin/customers/async_get_customers/yesterday',
+		columns: CIApplication.CustomerListColumns,
+		paginator: { itemsPerPage: 15 }
+	});
+	yesterdaysCustomers.toolbar.addItemToLeft(yesterdaysCustomers.paginator);
+	
+	var hPanel = new CIHPanel({
+		spacing: 10,
+		cssStyles: { CIFirmWidth: '100%' },
+		content: [
+			new CIVPanel({ cssStyles: { CIFirmWidth: '100%' }, content: [ todaysCustomers, yesterdaysCustomers ]})
+		]
+	});
+	
+	hPanel.element($('layout_content'));
+	todaysCustomers.paginator.selectPage(<%=@page%>);
+	yesterdaysCustomers.paginator.selectPage(<%=@page%>);
+</script>

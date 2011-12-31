@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/nhw/!svn/ver/425/trunk/app/views/admin/admin
+END
+login.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/nhw/!svn/ver/29/trunk/app/views/admin/admin/login.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/nhw/!svn/ver/222/trunk/app/views/admin/admin/new.html.erb
+END
+sales_dashboard.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/nhw/!svn/ver/458/trunk/app/views/admin/admin/sales_dashboard.html.erb
+END
+claims_dashboard.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/414/trunk/app/views/admin/admin/claims_dashboard.html.erb
+END

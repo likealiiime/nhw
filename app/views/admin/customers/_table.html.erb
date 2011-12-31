@@ -1,0 +1,33 @@
+<% hide_status ||= false %>
+<% strftime ||= strftime_time %>
+
+<table cellpadding="3" cellspacing="0">
+	<thead><tr>
+		<td style="width: 75px;">Contract #</td>
+		<td style="width: 125px;">Date</td>
+		<td>Name</td>
+		<td>Email</td>
+		<td style="width: 20px;">&nbsp;</td>
+		<td style="width: 30px;">&nbsp;</td>
+		<% unless hide_status %><td style="width: 100px;">Status</td><% end %>		
+		<td style="width: 30px;">&nbsp;</td>
+	</tr></thead>
+	<% customers.each do |customer| %>
+	<tr class="<%= 'webOrder ' if customer.web_order? %><%=cycle('', 'stripe ')%>hoverable">
+		<td><%=customer.contract_number%></td>
+		<td style="width: 125px;"><%=with_timezone(customer.date).strftime(strftime_date_time) if customer.date %></td>
+		<td><%=customer.name%></td>
+		<td><a href="mailto:<%=customer.email%>"><%=customer.email%></a>&nbsp;</td>
+		<td style="width: 20px;"><% if customer.email and not customer.email.empty?%>
+			<a href="#" class="quickMail" rel="<%=customer.id%>"><img src="/images/icons/mail_write.png" alt="Quick Mail"/></a>
+		<% end %></td>
+		<td style="width: 30px;">
+			<% if customer.transactional_standing %>
+				<img src="/images/icons/credit_cards/<%=customer.transactional_standing%>.png" alt="<%=customer.transactional_standing.capitalize%>">
+			<% end %>
+		</td>
+		<% unless hide_status %><td><%=customer.status%></td><% end %>
+		<td style="text-align: center;"><a href="/admin/customers/edit/<%=customer.id%>">Edit</a></td>
+	</tr>
+	<% end %>
+</table>

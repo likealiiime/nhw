@@ -1,0 +1,49 @@
+10
+
+dir
+434
+https://sherrod@nationwide.svn.beanstalkapp.com/nhw/trunk/vendor/plugins
+https://sherrod@nationwide.svn.beanstalkapp.com/nhw
+
+
+
+2009-06-13T04:07:42.436551Z
+386
+sherrod
+has-props
+
+svn:special svn:externals svn:needs-lock
+svn:externals
+
+
+
+
+
+
+
+
+
+
+296910a1-0757-0410-bd70-8aafbd3fdeec
+
+shoulda
+dir
+
+ssl_requirement
+dir
+
+customer_can
+dir
+
+backgroundrb
+dir
+
+princely
+dir
+
+newrelic_rpm
+dir
+
+active_merchant
+dir
+

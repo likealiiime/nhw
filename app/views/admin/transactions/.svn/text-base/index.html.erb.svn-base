@@ -1,0 +1,62 @@
+<h2>Transactions, showing <%=@transactions.length%> of <%=@transactions_count%></h2>
+
+<%= will_paginate @transactions, :param_name => :transactions_page %>
+<table cellspacing="0" cellpadding="3">
+	<thead><tr>
+		<td>Date</td>
+		<td>Result</td>
+		<td>Amount</td>
+		<td>Payment #</td>
+		<td>Sub. ID</td>
+		<td>Customer</td>
+		<td>Agent</td>
+	</tr></thead>
+	
+	<% @transactions.each do |transaction| %>
+	<tr class="hoverable <%=cycle('stripe', '')%>">
+		<td><%=with_timezone(transaction.created_at.utc).strftime(strftime_date_time)%></td>
+		<td class="<%=transaction.result_class%>"><%=transaction.result%></td>
+		<td><%=transaction.dollar_amount%></td>
+		<td><%= if transaction.subscription_paynum then "##{transaction.subscription_paynum}" end %></td>
+		<td><%=transaction.subscription_id%></td>
+		<td><% if transaction.customer %>
+			<a href="/admin/customers/edit/<%=transaction.customer.id%>"><%=transaction.customer.name%></a>
+		<% end %></td>
+		<td><% if transaction.customer and transaction.customer.agent %>
+			<a href="/admin/agents/edit/<%=transaction.customer.agent.id%>"><%=transaction.customer.agent.name%></a>
+		<% end %></td>
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @transactions, :param_name => :transactions_page %>
+
+<br/>
+<h2>Contractor Payments, showing <%=@payments.length%> of <%=@payments_count%></h2>
+
+<%= will_paginate @payments, :param_name => :payments_page %>
+<table cellspacing="0" cellpadding="3">
+	<thead><tr>
+		<td>Date</td>
+		<td>Amount</td>
+		<td>Pay To</td>
+		<td>Paid On</td>
+	</tr></thead>
+	
+	<% @payments.each do |payment| %>
+	<tr class="hoverable <%=cycle('stripe', '')%>">
+		<td><%=with_timezone(payment.created_at.utc).strftime(strftime_date_time)%></td>
+		<td><%=payment.dollar_amount%></td>
+		<td>
+			<% if payment.contractor %>
+				<a href="/admin/contractors/edit/<%=payment.contractor.id%>"><%=payment.contractor.company%></a>
+			<% else %>
+				<span>No Contractor Set</span>
+			<% end %>
+		</td>
+		<td>
+			<%=payment.paid_on%>
+		</td>
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @payments, :param_name => :payments_page %>

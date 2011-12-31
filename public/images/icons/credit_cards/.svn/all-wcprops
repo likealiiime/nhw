@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/nhw/!svn/ver/312/trunk/public/images/icons/credit_cards
+END
+avsmismatch.png
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/avsmismatch.png
+END
+approved.png
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/approved.png
+END
+invalidcard.png
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/invalidcard.png
+END
+void.png
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/nhw/!svn/ver/312/trunk/public/images/icons/credit_cards/void.png
+END
+declined.png
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/declined.png
+END
+duplicate.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/duplicate.png
+END
+expiredcard.png
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/93/trunk/public/images/icons/credit_cards/expiredcard.png
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/nhw/!svn/ver/242/trunk/app/views/admin/discounts
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/242/trunk/app/views/admin/discounts/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/50/trunk/app/views/admin/discounts/index.html.erb
+END

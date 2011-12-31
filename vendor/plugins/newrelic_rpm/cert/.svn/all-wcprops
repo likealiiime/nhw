@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/cert
+END
+cacert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/cert/cacert.pem
+END

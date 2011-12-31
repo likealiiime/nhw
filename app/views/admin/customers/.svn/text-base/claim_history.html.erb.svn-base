@@ -1,0 +1,2 @@
+<h2>All Claims</h2>
+<%= render :partial => 'claims_table', :locals => { :claims => @customer.claims } %>

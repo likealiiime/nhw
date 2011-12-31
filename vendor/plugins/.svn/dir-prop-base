@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 79
+action_mailer_tls             http://code.openrain.com/rails/action_mailer_tls
+
+END

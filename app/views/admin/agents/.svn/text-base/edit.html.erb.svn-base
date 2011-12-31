@@ -1,0 +1,103 @@
+<% selected = 'selected="selected"' %>
+<table cellpadding="15" cellspacing="0"><tr>
+	<td style="vertical-align: top; border-right: 1px dashed #CCC; width: 50%;">
+		<h2>Edit Agent</h2>
+		<% form_for :agent, @agent, :url => { :action => 'update', :id => @agent.id } do |agent| %><% fields_for :account, @agent.account do |account| %>
+			<table class="form_table">
+				<tr>
+					<td class="label">Name:</td>
+					<td><%=agent.text_field :name %></td>
+				</tr>
+				<tr>
+					<td class="label">Email:</td>
+					<td><%=account.text_field :email %></td>
+				</tr>
+				<tr>
+					<td class="label">Password:</td>
+					<td><input type="password" name="account[password]" />&nbsp;&nbsp;&nbsp;Leave blank for no change</td>
+				</tr>
+				<tr>
+					<td class="label">Timezone:</td>
+					<td><%= render :partial => 'admin/accounts/timezone_select_tag', :locals => { :timezone => @agent.account.timezone } %></td>
+				</tr>
+				<tr>
+					<td class="label">Role:</td>
+					<td>
+						<select name="account[role]">
+							<% Account.roles.each do |role| %>
+								<option value="<%=role%>" <%='selected="selected"' if @agent.account.role == role%>><%=role.capitalize%></option>
+							<% end %>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<%= submit_tag 'Save Agent' %> or <a href="/admin/agents">Cancel</a>
+					</td>
+				</tr>
+			</table>
+		<% end %><% end %>
+	</td>
+	<td style="vertical-align: top;">
+		<h2>Transactions</h2>
+		<form action="/admin/agents/edit/<%=@agent.id%>" method="GET">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+			<table>
+				<tr>
+					<td style="width: 50px; text-align: right;">See:</td>
+					<td>
+						From <input type="text" size="8" name="from" value="<%=@from.strftime(strftime_date) if @from%>"/>
+						to <input type="text" size="8" name="to" value="<%=@to.strftime(strftime_date) if @to%>"/>&nbsp;<input type="submit" value="Go">
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td><td><span class="gray">Enter in MM/DD/YY format</span></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">Or:</td>
+					<td><a href="/admin/agents/edit/<%=@agent.id%>">See All Transactions</a></td>
+				</tr>
+			</table>
+		</form>
+		<% form_for :agent, @agent, :url => { :action => 'update', :id => @agent.id } do |f| %>
+		<input type="hidden" name="from" value="<%=@from.strftime(strftime_date) if @from%>"/>
+		<input type="hidden" name="to" value="<%=@to.strftime(strftime_date) if @to%>"/>
+		
+		<table cellpadding="3" cellspacing="0">
+			<thead><tr>
+				<td>Date</td>
+				<td>Result</td>
+				<td>Amount</td>
+				<td>Customer</td>
+			</tr></thead>
+			
+			<% @transactions.each do |transaction| %>
+			<% next if transaction.created_at.nil? %>
+			<tr class="hoverable <%=cycle('', 'stripe')%>">
+				<td><%=transaction.created_at.in_time_zone(EST).strftime(strftime_date_time)%></td>
+				<td class="<%=transaction.result_class%>"><%=transaction.result%></td>
+				<td class="<%= 'strikethrough' unless transaction.approved? %>"><%=transaction.dollar_amount%></td>
+				<td><% if transaction.customer %>
+					<a href="/admin/customers/edit/<%=transaction.customer.id%>"><%=transaction.customer.name%></a>
+				<% end %></td>
+			</tr>
+			<% end %>
+			
+			<tr>
+				<td colspan="2" style="text-align: right; border-top: 1px solid #CCC;"><strong>Total:</strong></td>
+				<td colspan="2" style="border-top: 1px solid #CCC;"><strong><%="$%4.2f" % @total%></strong></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: right;"><strong>Commission:</strong></td>
+				<td><%=f.text_field :commission_percentage, :size => 2%>%</td>
+				<td><input type="submit" value="Recalculate"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: right;"><strong>Will Receive:</strong></td>
+				<td><strong><%="$%4.2f" % (@total * (@agent.commission_percentage / 100.0))%></strong></td>
+			</tr>
+		</table>
+		<% end %>
+	</td>
+</tr></table>

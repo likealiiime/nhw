@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+				line-height: 1.3em;
+			}
+			
+			table tr td.label{
+				vertical-align: top;
+				text-align: right;
+				width: 120px;
+			}
+			
+			span.gray {
+				color: gray;
+			}
+			
+			p.indent_30 {
+				text-indent: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="8">
+			<tr>
+				<td colspan="2"><img src="http://localhost:3000/images/email/logo.gif" alt="Nationwide Home Warranty" /></td>
+			</tr>
+			<tr>
+				<td class="label">Contract:</td>
+				<td>{customer contract_number}</td>
+			</tr>
+			<tr>
+				<td class="label">Buyer Name:</td>
+				<td>{customer name}</td>
+			</tr>
+			<tr>
+				<td class="label">Cvg. Address:</td>
+				<td>{customer customer_address}<br>{customer customer_city}, {customer coverage_state} {customer coverage_zip}</td>
+			</tr>
+			<tr>
+				<td class="label">Coverage:</td>
+				<td>
+					{customer package_name} for {customer package_price} annually<br>
+					<span class="gray">Coverage will begin 30 days from payment acceptance for a complete 1 (one) calendar year.</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">&nbsp;</td>
+				<td>Plumbing System, A/C Cooling, Electrical System, Heating System, Water Heater, Oven/ Stove, Microwave (built in), Cook top, Dishwasher, Garbage Disposal, Refrigerator, Clothes Washer, Clothes Dryer, Duct Work, Garage Door Opener, Ceiling Fans, Plumbing Stoppage.
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Please send check to:</td>
+				<td>
+					<strong>Nationwide Home Warranty</strong><br>
+					P.O. Box 341<br>
+					New York, NY 10013<br>
+					<a href="mailto:info@nationwidehomewarranty.com">info@nationwidehomewarranty.com</a>
+				</td>
+			</tr>
+		</table>
+		<p>
+			What you can expect from Nationwide Home Warranty:<br>
+			<ul>
+				<li>Help in protection from unexpected repair and replacement expenses on covered systems and appliances</li>
+				<li>24-hours a day, seven days a week, one call convenience to our service line</li>
+				<li>Service provided by pre-screened, licensed, and insured local technicians</li>
+			</ul><br>
+			If you have any questions, please call me at <strong>1 (888) 500-211</strong>.
+		</p>
+		
+		<p class="indent_30">Thank You,</p>
+		<p class="indent_30"><strong>{my name}</strong></p>
+	</body>
+</html>

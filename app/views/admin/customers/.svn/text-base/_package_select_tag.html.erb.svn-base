@@ -1,0 +1,24 @@
+<%
+	selected = 'selected="selected"'
+	
+	home_types = {
+		'Unspecified' 	=> nil,
+		'Single-Family' => 'single',
+		'Condominium' 	=> 'condo',
+		'Duplex' 		=> 'duplex',
+		'Triplex' 		=> 'triplex',
+		'Fourplex' 		=> 'fourplex'
+	}
+%>
+
+<select id="customer_home_type" name="customer[home_type]">
+	<% home_types.each do |label, value| %>
+		<option <%=selected if customer.home_type == value%> value="<%=value%>"><%=label%></option>
+	<% end %>
+</select>
+
+<select id="customer_coverage_type" name="customer[coverage_type]">
+	<% Package.find(:all).each do |package| %>
+		<option <%=selected if customer.coverage_type == package.id %> value="<%=package.id%>"><%=package.package_name%></option>
+	<% end %>
+</select>

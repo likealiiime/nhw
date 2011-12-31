@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation
+END
+data_mapper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/data_mapper.rb
+END
+memcache.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/memcache.rb
+END
+controller_instrumentation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb
+END
+dispatcher_instrumentation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/dispatcher_instrumentation.rb
+END
+passenger_instrumentation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/passenger_instrumentation.rb
+END
+active_merchant.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/active_merchant.rb
+END
+active_record_instrumentation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/active_record_instrumentation.rb
+END
+error_instrumentation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/error_instrumentation.rb
+END

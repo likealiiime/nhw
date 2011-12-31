@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/bin
+END
+mongrel_rpm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/bin/mongrel_rpm
+END
+newrelic_cmd
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/bin/newrelic_cmd
+END

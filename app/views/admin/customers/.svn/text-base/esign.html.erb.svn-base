@@ -1,0 +1,67 @@
+<h1>Terms of Service Agreement</h1>
+<h3>To activate your coverage, you must read and sign our Terms of Service Agreement.</h3>
+
+<p style="font-weight: bold;"><a href="/admin/customers/contract/<%=@customer.id%>?download=Y">
+	Click here to download your Terms of Service Agreement as a PDF (about 85KB).
+</a></p>
+
+<p>
+	You may fax your signed Terms of Service Agreement to us at: <strong>1 (214) 453-0024</strong>.
+	Alternatively, you may electronically sign your Agreement. The information you provide is confidential,
+	secure and will never be sold.
+</p>
+
+<div class="stripe" style="padding: 10px;">
+	<% if @customer.account %>
+	
+	<form action="/admin/customers/esign/<%=@customer.id%>" method="post" id="form">
+		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" />
+		<table class="form_table" cellspacing="5">
+			<% if flash[:error]%>
+			<tr>
+				<td colspan="2" style="font-weight: bold;">
+					Your credentials could not be validated. Please try again or fax your signed Agreement
+					to us at: 1 (214) 453-0024.
+					<br/><br/>
+				</td>
+			</tr>
+			<% end %>
+			
+			<tr>
+				<td class="label">Your Name:</td>
+				<td><input type="text" value="<%=@customer.name%>" name="signature[name]"/></td>
+			</tr>
+			<tr>
+				<td class="label">Email Address you signed up with:</td>
+				<td><input type="text" value="<%=@customer.email%>" name="signature[email]"/></td>
+			</tr>
+			<tr>
+				<td class="label">NHW Password (found in your Welcome email):</td>
+				<td><input type="password" size="10" name="signature[password]"/></td>
+			</tr>
+			<tr>
+				<td class="label">Credit Card Number you signed up with:</td>
+				<td><input type="text" size="16" name="signature[credit_card_number]"/></td>
+			</tr>
+			<tr>
+				<td class="label">Last 4 digits of your SSN:</td>
+				<td><input type="password" size="4" name="signature[ssn]"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<input type="submit" value="Electronically Sign" onclick="this.value = 'Validating...'; this.disabled = true; $('form').submit();"/><br/><br/>
+					Your information will be sent in a secure fashion.</td>
+			</tr>
+		</table>
+	</form>
+	
+	<% else %>
+	
+	<p style="text-align: center;">
+		You do not have a web account with us. Please fax your signed Agreement to us at:
+		<strong>1 (214) 453-0024</strong>.
+	</p>
+	
+	<% end %>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+los_angeles:
+  address: 123 Street St.
+  address2: 
+  address3: 
+  city: Los Angeles
+  state: CA
+  zip_code: 90001
+  addressable_id: 1
+  addressable_type: Customer
+
+new_york:
+  address: 456 Broadway
+  address2: Ste. 101
+  address3: 
+  city: New York
+  state: NY
+  zip_code: 10001
+  addressable_id: 2
+  addressable_type: Customer

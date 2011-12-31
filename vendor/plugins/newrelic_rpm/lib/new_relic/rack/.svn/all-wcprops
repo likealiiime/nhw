@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/rack
+END
+metric_app.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/rack/metric_app.rb
+END
+newrelic.yml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/rack/newrelic.yml
+END
+newrelic.ru
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/lib/new_relic/rack/newrelic.ru
+END

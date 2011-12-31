@@ -1,0 +1,10 @@
+<h2>Complete Repair</h2>
+<p>You are certifying that the repair for <strong><%=@repair.customer%></strong> has been completed. Please note anything of interest:</p>
+<form action="/admin/repairs/complete/<%=@repair.id%>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" />
+	<input type="hidden" name="note[repair_id]" value="<%=@repair.id%>" />
+	<input type="hidden" name="note[author_id]" value="<%=current_account.parent.id%>" />
+	<textarea rows="6" cols="50" name="note[note_text]"></textarea>
+	<br/><br/>
+	<input type="submit" value="Complete Repair" />
+</form>

@@ -1,0 +1,391 @@
+body {
+	margin: 0;
+	width: 100%;
+	font-size: 12px;
+	font-family: Tahoma, 'Lucida Grande', Helvetica;
+	color: #333;
+}
+img { border: none; }
+table { border: none; }
+
+/* CILink */
+.CILink {
+	text-decoration: none;
+	padding: 0.3em;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	/*border: 1px solid #747F92;*/
+	border: none;
+	color: white;
+	cursor: pointer;
+	background: url(/javascripts/cip/widgets/CILink.png) repeat-x;
+	font-size: 100%;
+}
+.CILink:hover {
+	background: url(/javascripts/cip/widgets/CILink_over.png) repeat-x;
+}
+.CILink:active {
+	background: url(/javascripts/cip/widgets/CILink_active.png) repeat-x;
+}
+.CIDisabledLink {
+	color: #CCC !important;
+	cursor: none;
+}
+.CIDisabledLink:hover {
+	background: url(/javascripts/cip/widgets/CILink.png) repeat-x;
+}
+
+/* CIToolbar */
+.CIToolbar {
+	background-color: #F9F9F9;
+	text-align: center;
+	padding: 5px;
+	border-bottom: 1px solid #CCC;
+}
+/* CISourceList */
+
+.CISourceListSkin {
+	border: 1px solid #CCC;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-right-radius: 5px;
+}
+
+.CISourceListHeaderSkin {
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-right-radius: 5px;
+	padding: 5px;
+	border-bottom: 1px dotted #CCC;
+	font-weight: bold;
+	background-color: #F0F0F0;
+	text-align: center;
+	color: #333;
+}
+.CISourceListToolbarSkin {
+	padding: 5px;
+	text-align: center;
+	border-bottom: 1px dotted #CCC;
+	background-color: #F0F0F0;
+}
+.CISourceListCellSkin {
+	padding: 5px;
+	text-align: left;
+	cursor: pointer;
+	font-size: 14px;
+}
+.CISourceListCellSkin:hover {
+	background-color: #B5D3F2;
+	color: white;
+}
+.CISourceListEmptyListCellSkin {
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+}
+.CISourceListSelectedCellSkin {
+	color: white !important;
+	background-color: #729DE2 !important;
+}
+
+/* CIForm */
+
+table.CIForm { border: none; }
+
+.CIFormLabel {
+	text-align: right;
+	width: 100px;
+}
+.CIFormTitle {
+	font-size: 1.2em;
+}
+.CIFormLabelField {
+	/*font-size: 1em;*/
+}
+.CIFormSubmitButton {
+	font-weight: bold;
+}
+
+/* CITabPanel */
+
+.CITabPanel {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #CCC;
+}
+.CITab {
+	background: url(/javascripts/cip/widgets/CITab.png) repeat-x;
+	color: #666;
+	text-align: center;
+	padding: 3px;
+	cursor: pointer;
+	border-bottom: 1px solid #CCC;
+	height: 15px;
+}
+.CITab:hover {
+	color: #333;
+	background: url(/javascripts/cip/widgets/CITab_over.png) repeat-x;
+}
+.CIFirstTab {
+	-webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	border-top-left-radius: 3px;
+}
+.CILastTab {
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-right-radius: 3px;
+}
+.CITabBody {
+	background-color: white;
+	padding: 5px;
+}
+
+/* CIPanelBase */
+.CIPanelBase { border: none; }
+
+/* CICurtainPanel */
+
+.CICurtainPanel {
+	border: 1px solid #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #F6F6F6;
+	padding: 3px;
+}
+.CICurtainPanel:hover {
+	background-color: #F0F0F0;
+}
+.CICurtainPanel:active { }
+.CICurtainPanelLabel {
+	text-indent: 0;
+	text-align: center;
+	cursor: pointer;
+}
+.CICurtainPanelBody {
+	padding: 5px;
+}
+
+/* CITable */
+
+.CITableContainer {
+	-webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-right-radius: 3px;
+	border: 1px solid #CCC;
+	background-color: white;
+}
+.CITableLabel {
+	background-color: #F9F9F9;
+	padding: 5px;
+	font-size: 1.2em;
+	border-bottom: 1px dotted #CCC;
+}
+.CITableInnerContainer {
+	overflow: auto;
+}
+.CITableHeaderRow { }
+.CITableHeaderColumn {
+	background: url(/javascripts/cip/widgets/CITableHeaderColumn.png) repeat-x;
+	border-bottom: 1px solid #CCC;
+	text-align: left;
+}
+.CITableNoDataColumn {
+	background-color: white;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+}
+.CITableCell {
+	border-left: none;
+}
+.CITableEditableCell {
+	cursor: pointer;
+	background-color: #FFF9EA;
+}
+.CITableEditableCell:hover { background-color: #FFF8D5; }
+.CISelectableTableRow {
+	cursor: pointer;
+}
+
+/* CIMenu */
+
+body.gecko .CIMenu {
+	border: 1px solid #CCC;
+}
+.CIMenu {
+	display: none;
+	z-index: 100;
+	position: absolute;
+	background-color: #EFEFEF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 3px 3px #777;
+	-moz-box-shadow: 0px 3px 3px #777;
+	box-shadow: 0px 3px 3px #777;
+}
+.CIMenuCancelItem {
+	background-color: #F2DEDE;
+	text-align: right;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-right-radius: 5px;
+	cursor: pointer;
+}
+.CIMenuCancelItem:hover {
+	background-color: #F2C8CB;
+}
+.CIMenuCancelItem:active {
+	background-color: #F29A9A;
+}
+.CIMenuItem {
+	background-color: #EEE;
+	border-bottom: 1px dotted #CCC;
+	padding: 5px;
+	cursor: pointer;
+}
+.CIMenuItem:hover {
+	background-color: #B5D3F2;
+}
+.CIMenuItem:active {
+	background-color: #7BABF2;
+}
+
+/* CIPaginator */
+
+.CIPaginator { display: inline; }
+.CIPaginatorLink {
+	margin-left: 2px;
+	background: none;
+	color: #333;
+}
+.CIPaginatorLink:hover {
+	background-image: none;
+	background-color: #B5D3F2;
+}
+.CIPaginatorSelectedLink {
+	background-image: none;
+	background-color: #7BABF2;
+	font-weight: bold;
+	color: white;
+}
+
+/* CISheet */
+
+.CISheet {
+	/* This is just a base number, CISheet increments it on each show */
+	z-index: 200;
+	width: 500px;
+	position: absolute;
+	background-color: #F9F9F9;
+	-webkit-box-shadow: 0px 3px 3px #333;
+	-moz-box-shadow: 0px 3px 3px #333;
+	box-shadow: 0px 3px 3px #333;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-right-radius: 3px;
+}
+.CISheetTitle {
+	background: url(/javascripts/cip/widgets/CISheetTitle.png) repeat-x;
+	font-size: 1.2em;
+	border-bottom: 1px solid #AAA;
+	padding: 10px;
+}
+.CISheetContentContainer {
+	border-bottom: 1px solid #AAA;
+	border-top: 1px solid white;
+	padding: 10px;
+}
+.CISheetButtonsContainer {
+	margin-top: 20;
+	text-align: right;
+	background: url(/javascripts/cip/widgets/CISheetButtonsContainer.png) repeat-x;
+	border-top: 1px solid white;
+	padding: 10px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-right-radius: 3px;
+}
+.CISheetButtonsContainer .CILink {
+	font-size: 1em;
+}
+
+/* CIModalLayer */
+
+.CIModalLayer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0; left: 0;
+	display: none;
+	background-image: url(/javascripts/cip/widgets/CIModalLayer.png);
+	opacity: 0;
+	z-index: 200;
+}
+
+/* CIText */
+
+.CIText {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+
+/* Skins */
+
+.CIHoverableSkin:hover {
+	background-color: #B5D3F2 !important;
+}
+.CIEvenSkin {
+	background-color: inherit;
+}
+.CIOddSkin {
+	background-color: #F0F0F0;
+}
+
+/* CISelected */
+
+.CISelected {
+	background-repeat: repeat-x !important;
+	font-weight: bold !important;
+	color: white !important;
+}
+.CISelectedSkin_22 { background-image: url(/javascripts/cip/selected/22.png) !important; }
+.CISelectedSkin_25 { background-image: url(/javascripts/cip/selected/25.png); }
+.CISelectedSkin_25_inverse { background-image: url(/javascripts/cip/selected/25_inverse.png) !important; }
+.CISelectedSkin_35 { background-image: url(/javascripts/cip/selected/35.png); }
+.CISelectedSkin_150 { background-image: url(/javascripts/cip/selected/150.png); }
+
+.CIkConnectedToElementBottom {
+	border-top: none;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius-topleft: 0;
+	border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-radius-topright: 0;
+	border-top-right-radius: 0;
+}

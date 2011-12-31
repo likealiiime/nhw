@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/nhw/!svn/ver/243/trunk/test/bdrb
+END
+bdrb_client_test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/nhw/!svn/ver/243/trunk/test/bdrb/bdrb_client_test_helper.rb
+END
+bdrb_test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/nhw/!svn/ver/243/trunk/test/bdrb/bdrb_test_helper.rb
+END
+socket_mocker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/nhw/!svn/ver/243/trunk/test/bdrb/socket_mocker.rb
+END

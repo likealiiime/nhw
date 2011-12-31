@@ -1,0 +1,515 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/nhw/!svn/ver/426/trunk/db/migrate
+END
+20090301201111_stupidly_change_faxes_assignable_type_to_string.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/nhw/!svn/ver/274/trunk/db/migrate/20090301201111_stupidly_change_faxes_assignable_type_to_string.rb
+END
+20081215000715_change_rating_default_to0.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/170/trunk/db/migrate/20081215000715_change_rating_default_to0.rb
+END
+20081214234612_add_rating_to_contractors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/169/trunk/db/migrate/20081214234612_add_rating_to_contractors.rb
+END
+20090316235705_add_message_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/297/trunk/db/migrate/20090316235705_add_message_id.rb
+END
+20090317193007_add_verified_address_to_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/304/trunk/db/migrate/20090317193007_add_verified_address_to_addresses.rb
+END
+20081216205053_change_back_to_verified.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/182/trunk/db/migrate/20081216205053_change_back_to_verified.rb
+END
+20090623155412_change_content.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/425/trunk/db/migrate/20090623155412_change_content.rb
+END
+20081003192814_add_discount_id_to_customers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/52/trunk/db/migrate/20081003192814_add_discount_id_to_customers.rb
+END
+20081219203651_create_contractor_payments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nhw/!svn/ver/198/trunk/db/migrate/20081219203651_create_contractor_payments.rb
+END
+20081216045309_add_verified_column_to_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nhw/!svn/ver/180/trunk/db/migrate/20081216045309_add_verified_column_to_addresses.rb
+END
+20081213000205_change_repair_authorization_to_numbers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nhw/!svn/ver/153/trunk/db/migrate/20081213000205_change_repair_authorization_to_numbers.rb
+END
+20081212041114_add_amount_to_repairs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/152/trunk/db/migrate/20081212041114_add_amount_to_repairs.rb
+END
+20081002224550_create_discounts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/50/trunk/db/migrate/20081002224550_create_discounts.rb
+END
+20090408190729_add_published_at.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/339/trunk/db/migrate/20090408190729_add_published_at.rb
+END
+20081210062948_create_contractors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/135/trunk/db/migrate/20081210062948_create_contractors.rb
+END
+20091006183224_change_transaction_ids_to_integers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nhw/!svn/ver/459/trunk/db/migrate/20091006183224_change_transaction_ids_to_integers.rb
+END
+20090224185621_create_faxes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/nhw/!svn/ver/264/trunk/db/migrate/20090224185621_create_faxes.rb
+END
+20090206005914_rename_starts_and_ends_on_renewals.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nhw/!svn/ver/250/trunk/db/migrate/20090206005914_rename_starts_and_ends_on_renewals.rb
+END
+20081219203851_drop_payments_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/nhw/!svn/ver/198/trunk/db/migrate/20081219203851_drop_payments_table.rb
+END
+20081216204748_change_verified_to_avs_validated.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nhw/!svn/ver/182/trunk/db/migrate/20081216204748_change_verified_to_avs_validated.rb
+END
+20081220060435_rename_hash.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/nhw/!svn/ver/202/trunk/db/migrate/20081220060435_rename_hash.rb
+END
+20081005181402_change_agent_id_to_null.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/nhw/!svn/ver/54/trunk/db/migrate/20081005181402_change_agent_id_to_null.rb
+END
+20081222194714_add_flagged_column_to_contractors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/206/trunk/db/migrate/20081222194714_add_flagged_column_to_contractors.rb
+END
+20090206010640_make_years_default_zero_on_renewals.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nhw/!svn/ver/250/trunk/db/migrate/20090206010640_make_years_default_zero_on_renewals.rb
+END
+20090611200718_create_credit_cards.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/nhw/!svn/ver/380/trunk/db/migrate/20090611200718_create_credit_cards.rb
+END
+20081213021146_change_address_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/156/trunk/db/migrate/20081213021146_change_address_fields.rb
+END
+20090224200628_add_source_id_to_faxes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/nhw/!svn/ver/264/trunk/db/migrate/20090224200628_add_source_id_to_faxes.rb
+END
+20090317193603_migrate_verified.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/304/trunk/db/migrate/20090317193603_migrate_verified.rb
+END
+20090224202905_add_password_to_fax_sources.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/265/trunk/db/migrate/20090224202905_add_password_to_fax_sources.rb
+END
+20081107023335_create_properties.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/95/trunk/db/migrate/20081107023335_create_properties.rb
+END
+20081220054238_create_signature_hashes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/202/trunk/db/migrate/20081220054238_create_signature_hashes.rb
+END
+20081211183201_add_author_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/142/trunk/db/migrate/20081211183201_add_author_id.rb
+END
+20090131170624_create_i_contact_requests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/241/trunk/db/migrate/20090131170624_create_i_contact_requests.rb
+END
+20090309013426_migrate_to_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/282/trunk/db/migrate/20090309013426_migrate_to_join_table.rb
+END
+20081210144509_create_work_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/137/trunk/db/migrate/20081210144509_create_work_orders.rb
+END
+20081211190002_add_authorization_to_repairs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nhw/!svn/ver/143/trunk/db/migrate/20081211190002_add_authorization_to_repairs.rb
+END
+20100520024602_the_great_purge.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/485/trunk/db/migrate/20100520024602_the_great_purge.rb
+END
+20090108231341_add_url_to_contractors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/nhw/!svn/ver/230/trunk/db/migrate/20090108231341_add_url_to_contractors.rb
+END
+20100521012538_another_purge.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/488/trunk/db/migrate/20100521012538_another_purge.rb
+END
+20090626000226_change_wait_period_overrides.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nhw/!svn/ver/426/trunk/db/migrate/20090626000226_change_wait_period_overrides.rb
+END
+20081215185440_make_addresses_less_strict.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nhw/!svn/ver/179/trunk/db/migrate/20081215185440_make_addresses_less_strict.rb
+END
+20090203235224_create_backgroundrb_queue_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nhw/!svn/ver/243/trunk/db/migrate/20090203235224_create_backgroundrb_queue_table.rb
+END
+20090224200028_create_fax_sources.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/269/trunk/db/migrate/20090224200028_create_fax_sources.rb
+END
+20090205213407_create_renewals.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/250/trunk/db/migrate/20090205213407_create_renewals.rb
+END
+20081211182601_add_repair_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/143/trunk/db/migrate/20081211182601_add_repair_id.rb
+END
+20090318034457_remove_verified_from_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nhw/!svn/ver/307/trunk/db/migrate/20090318034457_remove_verified_from_addresses.rb
+END
+20081231211031_stupidly_rename_last_login.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nhw/!svn/ver/220/trunk/db/migrate/20081231211031_stupidly_rename_last_login.rb
+END
+20100522175611_third_pugr.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/489/trunk/db/migrate/20100522175611_third_pugr.rb
+END
+20090201221944_make_notifications_level_integer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nhw/!svn/ver/242/trunk/db/migrate/20090201221944_make_notifications_level_integer.rb
+END
+20090618170750_remove_articles_column.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/nhw/!svn/ver/416/trunk/db/migrate/20090618170750_remove_articles_column.rb
+END
+20090623153559_create_content.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/nhw/!svn/ver/425/trunk/db/migrate/20090623153559_create_content.rb
+END
+20090625235448_add_wait_period_overrides.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/426/trunk/db/migrate/20090625235448_add_wait_period_overrides.rb
+END
+20090206172324_add_agent_names_to_claims_and_notes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nhw/!svn/ver/251/trunk/db/migrate/20090206172324_add_agent_names_to_claims_and_notes.rb
+END
+20081210171753_rename_work_orders_to_repairs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/137/trunk/db/migrate/20081210171753_rename_work_orders_to_repairs.rb
+END
+20090403220709_add_from_field_on_customers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/334/trunk/db/migrate/20090403220709_add_from_field_on_customers.rb
+END
+20090309010011_create_fax_assignable_joins.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/282/trunk/db/migrate/20090309010011_create_fax_assignable_joins.rb
+END
+20090317003941_change_message_id_to_number.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/298/trunk/db/migrate/20090317003941_change_message_id_to_number.rb
+END
+20090206005321_add_years_to_renewals.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/nhw/!svn/ver/250/trunk/db/migrate/20090206005321_add_years_to_renewals.rb
+END
+20081219203441_add_repair_id_to_payments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/198/trunk/db/migrate/20081219203441_add_repair_id_to_payments.rb
+END
+20081213010818_add_address_type_to_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/155/trunk/db/migrate/20081213010818_add_address_type_to_addresses.rb
+END
+20100221061303_add_unassigned_column_to_faxes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nhw/!svn/ver/477/trunk/db/migrate/20100221061303_add_unassigned_column_to_faxes.rb
+END
+20081002182826_create_transactions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/nhw/!svn/ver/460/trunk/db/migrate/20081002182826_create_transactions.rb
+END
+20090623031225_add_overrides_fields.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/nhw/!svn/ver/425/trunk/db/migrate/20090623031225_add_overrides_fields.rb
+END
+20081230200912_add_coverage_description_to_packages.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nhw/!svn/ver/213/trunk/db/migrate/20081230200912_add_coverage_description_to_packages.rb
+END
+20081212223157_make_fields_in_contractor_empty.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nhw/!svn/ver/152/trunk/db/migrate/20081212223157_make_fields_in_contractor_empty.rb
+END
+20081213233138_add_receive_invoice_as_on_contractors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/nhw/!svn/ver/161/trunk/db/migrate/20081213233138_add_receive_invoice_as_on_contractors.rb
+END
+20081004185003_modify_transactions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/54/trunk/db/migrate/20081004185003_modify_transactions.rb
+END
+20090201001113_create_notifications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/nhw/!svn/ver/242/trunk/db/migrate/20090201001113_create_notifications.rb
+END
+20081216223229_create_cancellation_reasons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nhw/!svn/ver/183/trunk/db/migrate/20081216223229_create_cancellation_reasons.rb
+END
+20090615231350_add_status_code_to_claims.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nhw/!svn/ver/397/trunk/db/migrate/20090615231350_add_status_code_to_claims.rb
+END
+20081215000843_change_contractor_notes_to_string.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/170/trunk/db/migrate/20081215000843_change_contractor_notes_to_string.rb
+END
+20090408175505_add_status_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/nhw/!svn/ver/339/trunk/db/migrate/20090408175505_add_status_id.rb
+END
+20081006213519_add_commission_percentage.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/60/trunk/db/migrate/20081006213519_add_commission_percentage.rb
+END
+20081214011128_add_repair_status.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/nhw/!svn/ver/161/trunk/db/migrate/20081214011128_add_repair_status.rb
+END
+20081230221621_add_locked_to_email_templates.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/214/trunk/db/migrate/20081230221621_add_locked_to_email_templates.rb
+END
+20090317185051_add_lat_lng_to_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/303/trunk/db/migrate/20090317185051_add_lat_lng_to_addresses.rb
+END
+20081214052143_make_address_type_nullable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nhw/!svn/ver/165/trunk/db/migrate/20081214052143_make_address_type_nullable.rb
+END
+20090106203512_add_indexes_to_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/228/trunk/db/migrate/20090106203512_add_indexes_to_addresses.rb
+END
+20081213033516_make_amount_default_zero.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/156/trunk/db/migrate/20081213033516_make_amount_default_zero.rb
+END
+20081214005534_add_address_id_to_claims.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/nhw/!svn/ver/161/trunk/db/migrate/20081214005534_add_address_id_to_claims.rb
+END
+20100207073225_add_index_to_faxes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/nhw/!svn/ver/471/trunk/db/migrate/20100207073225_add_index_to_faxes.rb
+END
+20081209183441_create_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/nhw/!svn/ver/130/trunk/db/migrate/20081209183441_create_addresses.rb
+END
+20100221061814_update_unassigned_flag_for_all_faxes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nhw/!svn/ver/477/trunk/db/migrate/20100221061814_update_unassigned_flag_for_all_faxes.rb
+END
+20081231205021_add_last_login_column_to_accounts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nhw/!svn/ver/220/trunk/db/migrate/20081231205021_add_last_login_column_to_accounts.rb
+END
+20090429022241_add_service_charge_to_repairs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nhw/!svn/ver/363/trunk/db/migrate/20090429022241_add_service_charge_to_repairs.rb
+END

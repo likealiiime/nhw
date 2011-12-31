@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/config
+END
+test_control.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/config/test_control.rb
+END
+newrelic.yml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nhw/!svn/ver/436/trunk/vendor/plugins/newrelic_rpm/test/config/newrelic.yml
+END

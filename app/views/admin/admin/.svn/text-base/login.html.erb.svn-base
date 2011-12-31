@@ -1,0 +1,27 @@
+<br>
+<form action="/admin/authenticate" method="post"><table class="form_table">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<tr>
+		<td>&nbsp;</td>
+		<td><h2>Login</h2></td>
+	</tr><tr>
+		<td class='label'>Email:</td>
+		<td>
+			<input type="text" name="email"/>
+			<% if flash[:wrong_email] %>&nbsp;&nbsp;&nbsp;<span style="color: red;">Incorrect email address</span><% end %>
+		</td>
+	</tr><tr>
+		<td class='label'>Password:</td>
+		<td>
+			<input type="password" name="password"/>
+			<% if flash[:wrong_password] %>&nbsp;&nbsp;&nbsp;<span style="color: red;">Incorrect password</span><% end %>
+		</td>
+	</tr><tr>
+		<td>&nbsp;</td>
+		<td>
+			<input type="hidden" name="url_from" value="/admin/login"/>
+			<input type="submit" value="Login"/>
+			<% if flash[:not_eligible] %>&nbsp;&nbsp;&nbsp;<span style="color: red;">You are not eligible for web access</span><% end %>
+		</td>
+	</tr>
+</table></form>

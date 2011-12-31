@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/nhw/!svn/ver/243/trunk/lib/generators/worker/templates
+END
+unit_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nhw/!svn/ver/243/trunk/lib/generators/worker/templates/unit_test.rb
+END
+worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/nhw/!svn/ver/243/trunk/lib/generators/worker/templates/worker.rb
+END

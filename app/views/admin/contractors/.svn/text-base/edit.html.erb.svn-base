@@ -1,0 +1,79 @@
+<table cellpadding="15" cellspacing="0">
+	<tr>
+		<td valign="top">
+			<h2>Edit Contractor</h2>
+			<% form_for :contractor, @contractor, :url => { :action => 'update', :id => @contractor } do |f| %>
+			  <%= f.error_messages %>
+				<%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+				<%= render :partial => "contractor_form", :locals => { :f => f, :address => @contractor.address, :submit_label => "Update Contractor" } %>
+			<% end %>
+			<div id="webAccountCurtainPanel"></div>
+		</td>
+		<td style="width: 400px; vertical-align: top;" id="faxesColumn">
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+	var account = null;
+	
+	var webAccountCurtainPanel = new CICurtainPanel({
+		label: 'This Contractor does <strong>not</strong> have a web account',
+		contentStyles: { 'text-align': 'center' },
+		cssStyles: { 'margin-left': 107, 'margin-top': 10 },
+		openState: 'reveal',
+		content: new CIVPanel([
+			new CILink({
+				label: 'Grant Web Acct.',
+				post: {
+					url: '/admin/accounts/async_grant_web_account/<%=@contractor.id%>',
+					paramsFn: {
+						attachments: [{
+							path: 'app/views/admin/content',
+							filename: 'Nationwide-Contractor_Welcome.pdf',
+							content_type: 'application/pdf'
+						}],
+						email_template_name: 'Welcome Contractor',
+						object_type: 'Contractor'
+					}
+				},
+				Clicked: function() {
+					this.setLabel('Granting...');
+					this.disable();
+				},
+				PostedData: function(response) {
+					this.setLabel('Grant Web Acct.');
+					this.enable();
+					CISheet.alert('Grant Web Account', response.text);
+					webAccountCheck.send();
+				}
+			}),
+			new CIElement('br'),
+			new CILink({
+				label: 'Reset Password',
+				post: {
+					url: '/admin/accounts/async_reset_password/<%=@contractor.id%>',
+					paramsFn: { object_type: 'Contractor' }
+				},
+				PostedData: function(response) { CISheet.alert('Reset Password', response.text); }
+			})
+		])
+	});
+	webAccountCurtainPanel.element('webAccountCurtainPanel');
+	
+	var webAccountCheck = new Request.JSON({
+		url: '/admin/contractors/async_get_web_account/<%=@contractor.id%>',
+		method: 'get',
+		onSuccess: function(data, json) {
+			account = data;
+			if (account) webAccountCurtainPanel.setLabel('This Contractor has a web account.')
+		}
+	})
+	webAccountCheck.send();
+	
+	var faxesTable = CIApplication.generateFaxesTable({
+		title: 'Faxes', cannotRetrieve: true,
+		forResource: 'contractor', resourceId: <%=@contractor.id%>
+	});
+	faxesTable.element('faxesColumn');
+	faxesTable.getData();
+</script>

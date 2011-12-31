@@ -1,0 +1,25 @@
+<div>
+	<div id="layout_testimonials" class="sidebar" style="margin-bottom: 100px;">
+		<a href="/testimonials"><h3>Testimonials</h3></a>
+		
+		<p><em>&ldquo;...I dropped another home warranty plan to pick up your plan. Wow! What a difference. It's great to have a home warranty company that really cares about their customers...&rdquo;</em></p>
+		<p>Patricia N.</p>
+		<br>
+		<p><em>&ldquo;Boy was I lucky I had a warranty from Nationwide Home Warranty. The replacement cost on my central AC units was $50 instead of $1500! Thank you.&rdquo;</em></p>
+		<p>Carl B.</p>
+		<a href="/testimonials">Read more testimonials...</a>
+	</div>
+	
+	<h1>Welcome to<br>Nationwide Home Warranty</h1>
+	<h2>What is a Home Warranty?</h2>
+	<p>A home warranty is a service contract that covers the repair or replacement of covered home systems, components and appliances, please see terms and conditions for limitations.</p>
+	<h3>Why do I need a Home Warranty?</h3>
+	<p>As a homeowner, you never know when a heat or plumbing system, appliance, or garage door will break down. Repairing these systems requires time to look for a suitable repair technician, who may or may not show up, in addition to exorbitant repair costs &mdash; repairing your air conditioning system can be costly.</p>
+	<p>With a contract from Nationwide Home Warranty, you can shield your wallet from necessary home repair expenses that always seem to come at the most inopportune times. For a small service fee, you can have a pre-screened, licensed local service technician repair or replace your covered broken system or appliance on your schedule. Our network boasts a 15,000 strong workforce of licensed local contractors who are ready to assist you. Please review the terms and conditions before purchasing.<p>
+	<table border="0" cellpadding="5" cellspacing="0">
+		<tr><td colspan="2"><strong>Hours of Operation:</strong></td></tr>
+		<tr><td>Mon-Fri</td><td>10am-5pm EST</td></tr>
+		<tr><td>Sat</td><td>11am-5pm EST</td></tr>
+		<tr><td>Sunday</td><td>Closed</td></tr>
+	</table>
+</div>

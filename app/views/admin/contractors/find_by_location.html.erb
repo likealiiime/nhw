@@ -1,0 +1,29 @@
+<h2><%=@addresses.length%> Contractors within <%=@radius.to_i%> miles of <%=@location.address%></h2>
+<%form_tag '/admin/contractors/find_by_location', :method => :get do -%>
+Find contractors within <%=text_field_tag :radius, 15, :size => 3%> miles of location: <%=text_field_tag :location%>
+<%=submit_tag 'Find'%>
+<% end -%>
+<br/>
+<table cellspacing="0" cellpadding="3">
+	<thead><tr>
+		<td style="width: 16px;"><img src="/images/icons/red_flag_16.png" alt="Flagged"/></td>
+		<td style="width: 350px;">Company</td>
+		<td style="phone: 100px;">Phone</td>
+		<td>Address</td>
+		<td style="30px;">Distance</td>
+		<td style="25px;">&nbsp;</td>
+	</tr></thead>
+	
+	<% @addresses.each do |address| %>
+	<%contractor = address.addressable%>
+	<%next if contractor.nil?%>
+	<tr class="hoverable <%=cycle('stripe', '')%>">
+		<td><%if contractor.flagged%><img src="/images/icons/red_flag_16.png" alt="Flagged"/><%end%></td>
+		<td><%=contractor.company%></td>
+		<td><%=contractor.phone%></td>
+		<td><%=address.to_s%></td>
+		<td><%=(address.distance_to(@location) || 0.0).round%> mi</td>
+		<td><a href="/admin/contractors/edit/<%=contractor.id%>">Edit</a></td>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,49 @@
+<h2>Packages</h2>
+<form action="/admin/packages/update" method="POST">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<table cellspacing="0" cellpadding="5" style="width: auto;">
+		<thead><tr>
+			<td style="width: 175px; text-align: right;">Package</td>
+			<% Package::HOME_TYPES.each do |type|%>
+				<td style="width: 75px;"><%=type.capitalize%></td>
+			<% end %>
+		</tr></thead>
+	<% @packages.each do |package| %>
+		<% cycle_class = cycle('', ' stripe') %>
+		<tr class="hoverable<%=cycle_class%>">
+			<td style="text-align: right;"><%=package.package_name%></td>
+			<% Package::HOME_TYPES.each do |type| %>
+				<% name = "package[#{package.id}][#{type}_price]" %>
+				<td><input type="text" size="6" value="<%=package.send("#{type}_price")%>" name="<%=name%>"/></td>
+			<% end %>
+		</tr>
+		<tr class="hoverable<%=cycle_class%>">
+			<td class="gray" style="text-align: right;" valign="top">Covers</td>
+			<td colspan="<%=Package::HOME_TYPES.length%>">
+				<textarea rows="2" cols="50" name="package[<%=package.id%>][covers]"><%=package.covers%></textarea>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+	<br>
+	<input type="submit" value="Save Packages"/>
+</form>
+
+<h2>Optional Addons</h2>
+<form action="/admin/packages/update_coverages" method="POST">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<table cellspacing="0" cellpadding="3" style="width: 250px;">
+		<thead><tr>
+			<td>Coverage</td>
+			<td>Price</td>
+		</tr></thead>
+	<% @coverages.each do |coverage| %>
+		<tr class="hoverable <%=cycle('', 'stripe')%>">
+			<td><%=coverage.coverage_name%></td>
+			<td>$<input type="text" size="6" value="<%="%4.2f" % coverage.price%>" name="<%="coverage[#{coverage.id}][price]"%>"/></td>
+		</tr>
+	<% end %>
+	</table>
+	<br>
+	<input type="submit" value="Save Addons"/>
+</form>

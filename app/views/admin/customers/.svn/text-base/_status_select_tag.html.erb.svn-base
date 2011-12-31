@@ -1,0 +1,11 @@
+<select id="customer_status_id" name="customer[status_id]">
+	<% { 0 => "New Customer",
+		 1 => "Left Message",
+		 2 => "Deleted",
+		 3 => "Follow Up",
+		 4 => "Completed Order" }.each do |id, label| %>
+	
+	<% selected = 'selected="selected"' if customer.status_id.to_i == id %>
+	<option <%=selected%> value="<%=id%>"><%=label%></option>
+	<% end %>
+</select>

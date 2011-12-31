@@ -1,0 +1,15 @@
+<h3>Address</h3>
+<table class="form_table">
+	<tr>
+		<td class="label"><%= f.label :address, "Street" %>:&nbsp;</td><td><%= f.text_field :address %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :city %>:&nbsp;</td><td><%= f.text_field :city %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :state %>:&nbsp;</td><td><%= f.select :state, state_select_options %></td>
+	</tr>
+	<tr>
+		<td class="label"><%= f.label :zip_code %>:&nbsp;</td><td><%= f.text_field :zip_code %></td>
+	</tr>
+</table

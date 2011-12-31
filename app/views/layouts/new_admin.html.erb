@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<title><%="#{@page_title}"%> - Nationwide Home Warranty</title>
+		<%= yield :gmap_script %>
+		<%= javascript_include_tag '/cip/cip.src.js', 'admin' %>
+		<%= yield :cip_scripts %>
+		
+		<%= stylesheet_link_tag '/cip/cip.css', 'new_admin' %>
+		<script type="text/javascript">
+			CIApplication.baseParams = { authenticity_token: "<%=form_authenticity_token%>" };
+			var advancedSearchHud = null;
+			
+			window.addEvent('domready', function() {
+				var advancedSearchHudContainer = new CIElement('div');
+				$('contractorFinder').addEvent('click', ContractorFinder.hud.show.bind(ContractorFinder.hud));
+				
+				advancedSearchButton = new CIButton({
+					label: 'Search',
+					cssStyles: { display: 'block', CIFirmWidth: 278 },
+					Clicked: function() {
+						advancedSearchButton.setLabel('Searching...').disable();
+						new Request.JSON({
+							url: '/admin/customers/async_advanced_search_check',
+							data: $('advancedSearchForm').toQueryString(),
+							onSuccess: function(o, json) {
+								var count = o.count.toInt();
+								if (count > 100) {
+									CISheet.prompt(
+										"Over 100 results",
+										"Your search has yielded <strong>" + count + "</strong> results, " +
+										"which may cause the system to become unresponsive. Do you want to continue?",
+										{
+											label: 'Continue',
+											Clicked: function() {
+												$('advancedSearchForm').submit();
+											}
+										}
+									);
+									advancedSearchButton.setLabel('Search').enable();
+								} else if (count == 0) {
+									CISheet.alert(
+										'No results',
+										'Your search did not yield any results.'
+									);
+									advancedSearchButton.setLabel('Search').enable();
+								} else {
+									$('advancedSearchForm').submit();
+								}
+							}
+						}).post();
+					}
+				});
+				advancedSearchHud = new CIHud({
+					title: 'Advanced Search',
+					offset: { dx: 20, dy: 20 },
+					cssStyles: { CIFirmWidth: 305, position: 'fixed' },
+					
+					content: [
+						advancedSearchHudContainer,
+						advancedSearchButton
+					],
+					Shown: function() {
+						var div = $('advancedSearchDiv');
+						advancedSearchHudContainer.element().adopt(div);
+						div.setStyle('display', 'block');
+					},
+					RemovingFromDom: function() {
+						var div = $('advancedSearchDiv');
+						div.setStyle('display', 'none');
+						$('layout_fixed_header').adopt(div);
+					}
+				});
+				
+				$$('div.layout_tab_container').each(function(container) {
+					if (container.hasClass('hasNoSubtabs')) return;
+					container.set('tween', { duration: 300, property: 'height' });
+					container.addEvent('mouseenter', function() { container.tween(150); 	});
+					container.addEvent('mouseleave', function() { container.tween(26); 		});
+				});
+				
+				var searchMenu = new CIMenu({
+					offset: { from: 'searchMenuButton', dy: 21 },
+					cssStyles: { CIFirmWidth: 180 },
+					items: [
+						{ html: '<span class="searchMenuLabel">#</span>Customer ID', value: 'id', symbol: '#' },
+						{ html: '<span class="searchMenuLabel">F</span>First Name', value: 'first_name', symbol: 'F' },
+						{ html: '<span class="searchMenuLabel">L</span>Last Name', value: 'last_name', symbol: 'L' },
+						{ html: '<span class="searchMenuLabel">E</span>Email', value: 'email', symbol: 'E' },
+						{ html: '<span class="searchMenuLabel">S</span>Street', value: 'street', symbol: 'S' },
+						{ html: '<span class="searchMenuLabel">P</span>Phone Number', value: 'phone', symbol: 'P' },
+						{ html: '<span class="searchMenuLabel">+</span>Advanced Search...', value: 'advanced', symbol: '+' }
+					],
+					Changed: function(value) {
+						if (this.selected.symbol == '+') {
+							this.select(0);
+							advancedSearchHud.show();
+						}
+						$('searchMenuButton').set('html', this.selected.symbol);
+						$('searchFieldHidden').set('value', value);
+					},
+					Clicked: function() { $('searchField').focus(); }
+				});
+				searchMenu.select(0);
+				$('searchMenuButton').addEvent('click', function() { searchMenu.toggle('layout_fixed_header'); });
+			});
+			
+			window.addEvent('keypress', function(event) {
+				if (event.control) {
+					event.stop();
+					if (event.key == 'enter') {
+						$('searchField').focus();
+					} else if (event.key == 's') {
+						advancedSearchHud.show();
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<form id="contractorFinderForm" style="display: none;" method="get" action="/admin/contractors/find_by_location">
+			<input type="hidden" name="location" id="contractorFinderForm_location"/>
+			<input type="hidden" name="radius" id="contractorFinderForm_radius"/>
+		</form>
+		<div id="quickMail_hud">
+			<table class="form_table" style="width: auto;">
+				<tr>
+					<td class="label">Quickly Email:</td>
+					<td><span id="quickMail_hud_name">Customer</span></td>
+				</tr>
+				<tr>
+					<td class="label">Using Template:</td>
+					<td><select id="quickMail_hud_select"></select></td>
+				</tr>
+				<tr>
+					<td class="label"><input type="button" value="Close" onclick="$('quickMail_hud').fade('hide');"/></td>
+					<td>
+						<input id="quickMail_hud_sendButton" type="button" value="Send Email" onclick="sendQuickMail();" />
+						<p id="quickMail_hud_status" title="" class="hasToolTip" onclick="$('quickMail_hud').fade('hide');"></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="layout_fixed_header">
+			<div id="layout_toolbar">
+				<div style="position: relative; top: 3px; left: 3px; display: inline;">
+					<% if current_account.customer? %>
+						<a href="/admin/customers/claims" style="font-size: 18px;">Your Contract Number is <strong><%= current_account.parent.contract_number%></strong></a>
+					<% elsif current_account.can_see_nhw_tabs %>
+						<% form_tag('/admin/customers/smart_search', :style => 'display: inline;') do -%>
+							<input type="hidden" id="searchFieldHidden" name="param">
+							<div class="searchField_container">
+								<div class="searchField_left"></div>
+								<div class="searchField_lead" style="padding-top: 2px;"><span id="searchMenuButton" class="searchMenuLabel"></span></div>
+								<div class="searchField_mid"><input id="searchField" class="searchField" type="text" name="query"></div>
+								<div class="searchField_right">&nbsp;</div>
+							</div>
+						<% end -%>
+						<div id="contractorFinder" title="Find Contractor by location">&nbsp;</div>
+						<div id="scopeToolbar">
+							<a href="/admin/customers/list/new">New</a>
+							<a href="/admin/customers/list/leftmessage">Left Message</a>
+							<a href="/admin/customers/list/deleted">Deleted</a>
+							<a href="/admin/customers/list/followup">Follow Up</a>
+							<% if current_account.can_see_completed_orders %>
+							<a href="/admin/customers/list/completedorder">Completed Order</a>
+							<% end %>
+							<a href="/admin/customers/list/proforma">Proforma</a>
+							<a href="/admin/customers/list/tobebilled">To Be Billed</a>
+							<a href="/admin/customers/list/cancelled">Cancelled</a>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<% if current_account.empty? %>
+				<div id="layout_header"><h1>Nationwide Home Warranty</h1></div>
+			<% elsif not current_account.can_see_nhw_tabs %>
+				<div id="layout_header"><h1>Welcome to Nationwide Home Warranty, <%= current_account.parent.send(current_account.contractor? ? :company : :name) %></h1></div>
+			<% end %>
+			<div id="layout_tabs">
+				<% if current_account.can_see_nhw_tabs %>
+					<%= tabs_for(:index, [['Sales', 'sales_dashboard'], ['Claims', 'claims_dashboard'], ['Unassn. Faxes', 'faxes'], 'notifications']) %>
+					<%= tabs_for(:customers, [['Add Customer', 'customers/add']])%>
+					<%= tabs_for(:contractors) %>
+					<%= tabs_for(:transactions) if current_account.can_crud_transactions %>
+					<% content_items = [['Templates', 'email_templates']] %>
+					<% content_items += ['packages', 'discounts'] if current_account.can_crud_content %>
+					<%= tabs_for(:content, content_items) %>
+					<%= tabs_for(:settings, ['agents']) if current_account.can_change_settings%>
+					<%= tabs_for(:logout) %>
+				<% elsif current_account.customer? %>
+					<a class="<%= 'selected' if @selected_tab == 'edit'%>" href="/admin/customers/edit/<%=current_account.parent.id%>">Personal Info.</a>
+					<a href="/admin/customers/claims#add">Make Claim</a>
+					<a class="<%= 'selected' if @selected_tab == 'claims'%>" href="/admin/customers/claims">My Claims</a>
+					<a class="<%= 'selected' if @selected_tab == 'history'%>" href="/admin/customers/claim_history">Claim History</a>
+					<a style="margin-left: 30px;" href="/admin/logout">Logout</a>
+				<% elsif current_account.contractor? %>
+					<!--<a class="<%= 'selected' if @selected_tab == 'contractors'%>" href="/admin/customers/edit/<%=current_account.parent.id%>">Company Info.</a> -->
+					<a class="<%= 'selected' if @selected_tab == 'repairs'%>" href="/admin/customers/claims">Repairs</a>
+					<a style="margin-left: 30px;" href="/admin/logout">Logout</a>
+				<% else %>
+					<a class="<%= 'selected' if @selected_tab == 'login'%>" href="/admin/login">Login</a>
+				<% end %>
+			</div>
+			<div id="advancedSearchDiv">
+				<form id="advancedSearchForm" action="/admin/customers/advanced_search" method="post">
+					<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+					<table cellpadding="5" cellspacing="0">
+					<%= search_hud_rows([
+						:first_name, :last_name, :phone, :email, :street, :city, :state, :zip_code,
+						["Status", :status_id, [['Any', '']] + Customer.formatted_status_array],
+						["Agent", :agent_id, [['Any', '']] + Agent.array]
+					]) %>
+					</table>
+				</form>
+			</div>
+		</div><!-- layout_fixed_header -->
+		<div id="layout_content">
+			<br/>
+			<%= yield %>
+		</div>
+		<div id="layout_footer">
+			Notice: UPS assumes no liability for the information provided by the address validation functionality. The address validation functionality does not support the identification or verification of occupants at an address.
+		</div>
+	</body>
+</html>
